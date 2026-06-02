@@ -1,0 +1,122 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{boylestad_dispositivos}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=8badf6f5cd034153c1b8f209f1d539ca}{%
+           family={Boylestad},
+           familyi={B\bibinitperiod},
+           given={Robert\bibnamedelima L.},
+           giveni={R\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=73f3ba640ee56c4e4ebc64767f679796}{%
+           family={Nashelsky},
+           familyi={N\bibinitperiod},
+           given={Louis},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {México}%
+      }
+      \list{publisher}{1}{%
+        {Pearson Educación}%
+      }
+      \strng{namehash}{ec1c6a27869deb4d710aba450b8f07c9}
+      \strng{fullhash}{ec1c6a27869deb4d710aba450b8f07c9}
+      \strng{fullhashraw}{ec1c6a27869deb4d710aba450b8f07c9}
+      \strng{bibnamehash}{ec1c6a27869deb4d710aba450b8f07c9}
+      \strng{authorbibnamehash}{ec1c6a27869deb4d710aba450b8f07c9}
+      \strng{authornamehash}{ec1c6a27869deb4d710aba450b8f07c9}
+      \strng{authorfullhash}{ec1c6a27869deb4d710aba450b8f07c9}
+      \strng{authorfullhashraw}{ec1c6a27869deb4d710aba450b8f07c9}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{10ma o 11ma}
+      \field{title}{Dispositivos Electrónicos y Teoría de Circuitos}
+      \field{year}{2009}
+    \endentry
+    \entry{neamen_fisica_semiconductores}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=ba23b5b50e91c8ffed7d3ba41e95ef9e}{%
+           family={Neamen},
+           familyi={N\bibinitperiod},
+           given={Donald\bibnamedelima A.},
+           giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Madrid o México}%
+      }
+      \list{publisher}{1}{%
+        {McGraw-Hill Interamericana}%
+      }
+      \strng{namehash}{ba23b5b50e91c8ffed7d3ba41e95ef9e}
+      \strng{fullhash}{ba23b5b50e91c8ffed7d3ba41e95ef9e}
+      \strng{fullhashraw}{ba23b5b50e91c8ffed7d3ba41e95ef9e}
+      \strng{bibnamehash}{ba23b5b50e91c8ffed7d3ba41e95ef9e}
+      \strng{authorbibnamehash}{ba23b5b50e91c8ffed7d3ba41e95ef9e}
+      \strng{authornamehash}{ba23b5b50e91c8ffed7d3ba41e95ef9e}
+      \strng{authorfullhash}{ba23b5b50e91c8ffed7d3ba41e95ef9e}
+      \strng{authorfullhashraw}{ba23b5b50e91c8ffed7d3ba41e95ef9e}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{3ra o 4ta}
+      \field{title}{Física y Dispositivos de Semiconductores: Principios Básicos}
+      \field{year}{2003}
+    \endentry
+    \entry{dunn_instrumentacion}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=c98b5c3330927f2b5610888b2cb91ff8}{%
+           family={Dunn},
+           familyi={D\bibinitperiod},
+           given={Patrick\bibnamedelima F.},
+           giveni={P\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {CRC Press}%
+      }
+      \list{publisher}{1}{%
+        {CRC Press}%
+      }
+      \strng{namehash}{c98b5c3330927f2b5610888b2cb91ff8}
+      \strng{fullhash}{c98b5c3330927f2b5610888b2cb91ff8}
+      \strng{fullhashraw}{c98b5c3330927f2b5610888b2cb91ff8}
+      \strng{bibnamehash}{c98b5c3330927f2b5610888b2cb91ff8}
+      \strng{authorbibnamehash}{c98b5c3330927f2b5610888b2cb91ff8}
+      \strng{authornamehash}{c98b5c3330927f2b5610888b2cb91ff8}
+      \strng{authorfullhash}{c98b5c3330927f2b5610888b2cb91ff8}
+      \strng{authorfullhashraw}{c98b5c3330927f2b5610888b2cb91ff8}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Measurement and Data Analysis for Engineering and Science}
+      \field{title}{Measurement and Data Analysis for Engineering and Science}
+      \field{year}{2012}
+      \field{pages}{1\bibrangedash 650}
+      \range{pages}{650}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
