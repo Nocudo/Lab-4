@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber main"] 1780401123.93066 "main.bcf" "main.bbl" "main" 1780402421.55013 0
+["biber main"] 1780401123.93066 "main.bcf" "main.bbl" "main" 1780463898.62237 0
   "biblio_traps_dynamics.bib" 1780381520 8637 8b8e9afe48a5ce17d77af818d978346f ""
-  "main.bcf" 1780402421 108049 13791c535ee9957a2150d14a7c983656 "pdflatex"
+  "main.bcf" 1780463898 108049 13791c535ee9957a2150d14a7c983656 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1780402419.00141 "c:/Users/rodri/OneDrive/Documentos/Documentos Miguel/Universidad/9no semestre/Materiales y semiconductores/Lab 4/informe/main.tex" "main.pdf" "main" 1780402421.55078 0
-  "C:/Users/rodri/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1780380225 82507 a9eef8696c92627b87e9975edea03b2a ""
+["pdflatex"] 1780463896.0273 "c:/Users/rodri/OneDrive/Documentos/Documentos Miguel/Universidad/9no semestre/Materiales y semiconductores/Lab 4/informe/main.tex" "main.pdf" "main" 1780463898.62325 0
+  "C:/Users/rodri/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1780463826 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/rodri/AppData/Local/MiKTeX/fonts/pk/ljfour/public/mathabx/dpi600/matha10.pk" 1780105014 24548 b2e3f885395a94d8ce46d9215b6dc135 ""
   "C:/Users/rodri/AppData/Local/MiKTeX/fonts/pk/ljfour/public/mathabx/dpi600/matha6.pk" 1780106322 16824 97e9004ec3d3adffc80595e011845a3b ""
   "C:/Users/rodri/AppData/Local/MiKTeX/fonts/pk/ljfour/public/mathabx/dpi600/matha7.pk" 1780105013 18928 a924e704dca6de8929bdabfa357e4fbc ""
@@ -272,6 +272,7 @@
   "C:/Users/rodri/AppData/Local/Programs/MiKTeX/tex/latex/matlab-prettifier/matlab-prettifier.sty" 1403179002 15090 356c8abf6910d571ce0de3250a16151a ""
   "C:/Users/rodri/AppData/Local/Programs/MiKTeX/tex/latex/mdwtools/mdwmath.sty" 1214495388 4549 758b2f806df30732211883464cf54805 ""
   "C:/Users/rodri/AppData/Local/Programs/MiKTeX/tex/latex/mdwtools/mdwtab.sty" 1214495388 29189 e9acab4b7912e75cbebc0aa4afa20550 ""
+  "C:/Users/rodri/AppData/Local/Programs/MiKTeX/tex/latex/multirow/multirow.sty" 1731767677 6696 886c9f3087d0b973ed2c19aa79cb3023 ""
   "C:/Users/rodri/AppData/Local/Programs/MiKTeX/tex/latex/pgf/basiclayer/pgf.sty" 1756451144 1090 bae35ef70b3168089ef166db3e66f5b2 ""
   "C:/Users/rodri/AppData/Local/Programs/MiKTeX/tex/latex/pgf/basiclayer/pgfcore.sty" 1756451144 373 00b204b1d7d095b892ad31a7494b0373 ""
   "C:/Users/rodri/AppData/Local/Programs/MiKTeX/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty" 1756451144 21013 f4ff83d25bb56552493b030f27c075ae ""
@@ -294,16 +295,16 @@
   "C:/Users/rodri/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/rodri/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "IEEEtran.cls" 1778577706 201400 079825ede5567dd086ec0b0b1e414d50 ""
-  "c:/Users/rodri/OneDrive/Documentos/Documentos Miguel/Universidad/9no semestre/Materiales y semiconductores/Lab 4/informe/main.tex" 1780402418 53913 1829d3a0bda7955023fe59c23501f953 ""
-  "corriente.png" 1780377154 76942 875ed2d36e5ba411149d5f375e267f36 ""
-  "curva_transferencia.png" 1780377485 45747 e35978071a43752472ff2c67d36ac147 ""
-  "familia_curvas.png" 1780377468 178010 b4470c4a0ebad6b7ff4615736617a34f ""
-  "main.aux" 1780402421 7351 868205ce61786945e390e6cdf5211a7c "pdflatex"
+  "c:/Users/rodri/OneDrive/Documentos/Documentos Miguel/Universidad/9no semestre/Materiales y semiconductores/Lab 4/informe/main.tex" 1780463895 68317 9a9b3ecfedf4d17a5a0174129ac1e399 ""
+  "corriente.png" 1780461195 76942 875ed2d36e5ba411149d5f375e267f36 ""
+  "curva_transferencia.png" 1780461142 53586 55bf6f1981b2e2a923acd2a6d2e61828 ""
+  "familia_curvas.png" 1780461131 177710 4b0426bc877713654bc4922c434f7927 ""
+  "main.aux" 1780463898 8522 e9735e74ff744ec9569abe0796b667d9 "pdflatex"
   "main.bbl" 1780401129 4713 491102b24d1bb3bb34d9a578f85cacc8 "biber main"
-  "main.run.xml" 1780402421 2413 f13696d6269e790f8235dd5266475f8b "pdflatex"
-  "main.tex" 1780402418 53913 1829d3a0bda7955023fe59c23501f953 ""
-  "regresion_corriente.png" 1780377170 45216 e3ebc5d1596439dd1de1fbe75f70745e ""
-  "voltaje.png" 1780377140 54140 bad411a11073248412bb8b231327ae61 ""
+  "main.run.xml" 1780463898 2413 f13696d6269e790f8235dd5266475f8b "pdflatex"
+  "main.tex" 1780463895 68317 9a9b3ecfedf4d17a5a0174129ac1e399 ""
+  "regresion_corriente.png" 1780461203 47192 4cba24085c4580857a77bec7fdd0c726 ""
+  "voltaje.png" 1780461185 54140 bad411a11073248412bb8b231327ae61 ""
   (generated)
   "main.aux"
   "main.bcf"

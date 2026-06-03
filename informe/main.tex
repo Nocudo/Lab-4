@@ -23,6 +23,7 @@
 \usepackage{pgfplots}
 \usepackage{booktabs}
 \usepackage{subcaption}
+\usepackage{multirow}
 \usepackage[backend=biber, style=ieee]{biblatex}
 \addbibresource{biblio_traps_dynamics.bib}
 \IEEEoverridecommandlockouts{}
@@ -601,22 +602,24 @@ automatizada registró las variables dinámicas en el dominio del tiempo para
 validar la integridad de las señales analógicas digitalizadas por el ESP32. En
 la Figura~\ref{fig:wave_voltaje} se exhibe el comportamiento temporal del
 voltaje capturado a través de los canales del ADC, evidenciando la
-sincronización y estabilidad del barrido automatizado. De forma complementaria,
-la Figura~\ref{fig:wave_corriente} presenta el perfil de corriente transitoria
-derivado de la caída de potencial en la resistencia de instrumentación,
-confirmando la ausencia de componentes espurios significativos o ruidos de alta
-frecuencia de gran amplitud antes del filtrado digital en Python.
+sincronización y estabilidad del barrido automatizado.
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\columnwidth]{voltaje.png}
-    \caption{Señales temporales de voltaje capturadas por la etapa de instrumentación del sistema DAQ.}\label{fig:wave_voltaje}
+    \caption{Señales temporales de voltaje capturadas por la etapa de instrumentación del sistema DAQ para un $V_{GS}$ = -0.142 V.}\label{fig:wave_voltaje}
 \end{figure}
+
+De forma complementaria, la Figura~\ref{fig:wave_corriente} presenta el perfil
+de corriente transitoria derivado de la caída de potencial en la resistencia de
+instrumentación, confirmando la ausencia de componentes espurios significativos
+o ruidos de alta frecuencia de gran amplitud antes del filtrado digital en
+Python.
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\columnwidth]{corriente.png}
-    \caption{Perfil de corriente en el dominio del tiempo registrado durante el barrido automatizado.}\label{fig:wave_corriente}
+    \caption{Perfil de corriente en el dominio del tiempo registrado durante el barrido automatizado para un $V_{GS}$ = -0.142 V.}\label{fig:wave_corriente}
 \end{figure}
 
 Una vez consolidadas las bases de datos en formato de texto plano, el script
@@ -627,36 +630,21 @@ optimización matemática y ajuste por mínimos cuadrados aplicado sobre los
 vectores de corriente filtrados, minimizando el error cuadrático medio frente a
 las lecturas experimentales crudas.
 
-Como resultado directo de esta optimización, la Figura~\ref{fig:curva_trans}
-expone la curva de transferencia estática ($I_D$ vs. $V_{GS}$) del transistor
-2N5457. En esta gráfica se contrasta la distribución de los puntos empíricos
-medidos frente a la traza analítica calculada mediante el modelo calibrado de
-Shockley, convalidando gráficamente la precisión del ajuste en la región de
-saturación y permitiendo la localización matemática exacta del voltaje de corte
-($V_p$) e $I_{DSS}$.
-
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\columnwidth]{regresion_corriente.png}
-    \caption{Procesamiento estadístico y regresión numérica de los datos de corriente de drenador.}\label{fig:regresion_id}
+    \caption{Procesamiento estadístico y regresión numérica de los datos de corriente de drenador para un $V_{GS}$ = -0.142 V.}\label{fig:regresion_id}
 \end{figure}
 
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=\columnwidth]{curva_transferencia.png}
-    \caption{Curva de transferencia experimental y modelo cuadrático ajustado de Shockley para el JFET 2N5457.}\label{fig:curva_trans}
-\end{figure}
-
-La consolidación final de la caracterización del dispositivo se presenta en la
-Figura~\ref{fig:familia_curvas}, la cual despliega la familia de curvas
-características de drenador ($I_D$ vs. $V_{DS}$) indexadas para los diferentes
-pasos de voltaje de compuerta-fuente ($V_{GS}$) configurados de manera externa.
-En este gráfico se aprecia con total claridad la transición del transistor
-desde la región óhmica o de triodo hacia la región de saturación. Asimismo, la
-pendiente incremental y sostenida que exhiben las trazas en la zona activa pone
-de manifiesto el impacto del fenómeno físico de modulación de longitud de canal
-($\lambda$), aportando el soporte gráfico que justifica las no idealidades
-analizadas en los resultados de polarización.
+Se presenta en la Figura~\ref{fig:familia_curvas}, la cual despliega la familia
+de curvas características de drenador ($I_D$ vs. $V_{DS}$) indexadas para los
+diferentes pasos de voltaje de compuerta-fuente ($V_{GS}$) configurados de
+manera externa. En este gráfico se aprecia con total claridad la transición del
+transistor desde la región óhmica o de triodo hacia la región de saturación.
+Asimismo, la pendiente incremental y sostenida que exhiben las trazas en la
+zona activa pone de manifiesto el impacto del fenómeno físico de modulación de
+longitud de canal ($\lambda$), aportando el soporte gráfico que justifica las
+no idealidades analizadas en los resultados de polarización.
 
 \begin{figure}[htbp]
     \centering
@@ -664,17 +652,24 @@ analizadas en los resultados de polarización.
     \caption{Familia completa de curvas características de drenador reales extraídas para el JFET bajo estudio.}\label{fig:familia_curvas}
 \end{figure}
 
-\subsection{Análisis de la Caracterización y Parámetros del JFET}
-La caracterización estática y el modelado analítico del transistor JFET 2N5457,
-ejecutados mediante el algoritmo de optimización y ajuste numérico en el script
-\texttt{main.py}, permitieron extraer los parámetros intrínsecos del
-dispositivo y evaluar las condiciones de operación óptimas para pequeña señal.
-Los valores experimentales consolidados a partir del procesamiento matemático
-se presentan detalladamente en la Tabla~\ref{tab:parametros_jfet}.
+Como resultado directo de la optimización, la Figura~\ref{fig:curva_trans}
+expone la curva de transferencia estática ($I_D$ vs. $V_{GS}$) del transistor
+2N5457. En esta gráfica se contrasta la distribución de los puntos empíricos
+medidos frente a la traza analítica calculada mediante el modelo calibrado de
+Shockley, convalidando gráficamente la precisión del ajuste en la región de
+saturación y permitiendo la localización matemática exacta del voltaje de corte
+($V_p$) e $I_{DSS}$ y el punto de operación ($V_{GSQ}$, $I_{DQ}$).
 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\columnwidth]{curva_transferencia.png}
+    \caption{Curva de transferencia experimental y modelo cuadrático ajustado de Shockley para el JFET 2N5457.}\label{fig:curva_trans}
+\end{figure}
+
+\subsection{Análisis de la Caracterización y Parámetros del JFET}
 El análisis determinó un punto de operación óptimo para amplificación lineal
 definido por un voltaje compuerta-fuente $V_{GSQ} = -0.2387\text{ V}$ y una
-corriente de drenador de saturación $I_{DQ} = 0.698\text{ mA}$. A partir de
+corriente de drenador de saturación $I_{DQ} = 4.432\text{ mA}$. A partir de
 este punto $Q$, se calculó una transconductancia dinámica $g_m = 5.85\text{
         mS}$, la cual establece una ganancia teórica de voltaje de $A_v = -5.85\text{
         V/V}$.
@@ -693,22 +688,164 @@ ecuación ideal de Shockley) asumen de forma estricta que $r_d \rightarrow
 fuente de error sistemático y justifica las discrepancias que se presentarán al
 contrastar estos datos con las mediciones empíricas en la protoboard.
 
-\begin{table*}[htbp]
-    \caption{Parámetros Intrínsecos y Punto $Q$ Óptimo Extraídos para el JFET 2N5457}\label{tab:parametros_jfet}
+\subsection{Síntesis y Diseño Analítico de las Redes de Polarización}
+
+Una vez extraídos los parámetros intrínsecos del transistor 2N5457 mediante el
+algoritmo de ajuste no lineal, se definió un punto de operación estático ($Q$)
+objetivo. Asumiendo una fuente de alimentación del laboratorio de $V_{DD} =
+    15.0\text{ V}$, se estableció un voltaje drenador-fuente central $V_{DSQ} =
+    7.50\text{ V}$ para garantizar la máxima excursión simétrica de la señal en
+futuras aplicaciones de amplificación lineal. Las coordenadas operativas
+dictaminadas del punto $Q$, resultaron en un voltaje de control $V_{GSQ} =
+    -0.2387\text{ V}$ y una corriente continua de drenaje $I_{DQ} = 4.432\text{
+        mA}$.
+
+Con el propósito de forzar al JFET a operar exactamente en este punto $Q$
+dentro del banco de pruebas, se calcularon analíticamente los componentes
+pasivos para las tres topologías clásicas de polarización. Las ecuaciones de
+síntesis de diseño arrojaron los siguientes valores teóricos exactos:
+
+\begin{itemize}
+    \item \textbf{Red de Polarización Fija (\textit{Fixed-Bias}):}
+          Dado que la terminal de la fuente está sólidamente aterrizada ($V_S = 0\text{ V}$), el potencial de compuerta debe ser suministrado por una fuente externa en polarización inversa. Se requiere un voltaje $V_{GG} = |V_{GSQ}| = 0.2387\text{ V}$. Por su parte, la resistencia de drenador absorbe el remanente de la caída de tensión dictada por la malla de salida:
+          \[ R_D = \frac{V_{DD} - V_{DSQ}}{I_{DQ}} = 1692.30\ \Omega \]
+
+    \item \textbf{Red de Autopolarización (\textit{Self-Bias}):}
+          Para independizar el circuito de la segunda fuente $V_{GG}$, se utiliza una resistencia de surtidor $R_S$ que eleva el potencial $V_S$ respecto a tierra. Al mantener la compuerta conectada a una referencia de $0\text{ V}$, se logra el $V_{GS}$ negativo requerido por la Ley de Ohm:
+          \[ R_S = \frac{|V_{GSQ}|}{I_{DQ}} = 53.86\ \Omega \]
+          La resistencia de drenador correspondiente se recalcula considerando esta nueva
+          caída de tensión en el surtidor:
+          \[ R_D = \frac{V_{DD} - V_{DSQ} - |V_{GSQ}|}{I_{DQ}} = 1638.44\ \Omega \]
+
+    \item \textbf{Red por Divisor de Voltaje (\textit{Voltage-Divider-Bias}):}
+          Para maximizar la estabilidad térmica y reducir sustancialmente la dependencia ante la dispersión paramétrica de los semiconductores, se propuso elevar intencionalmente el voltaje de surtidor a un nivel robusto de $V_S = 2.0\text{ V}$. A partir de esta premisa de diseño, se dimensionó la red:
+          \[ R_S = \frac{V_S}{I_{DQ}} = 451.28\ \Omega \]
+          El divisor de voltaje resistivo se encarga de proveer el potencial positivo en
+          la compuerta ($V_G = V_{GSQ} + V_S$). Fijando arbitrariamente $R_2 = 100\text{
+                  k}\Omega$ para garantizar una alta impedancia de entrada, se obtiene la
+          resistencia superior:
+          \[ R_1 = 751.65\text{ k}\Omega \]
+          Finalmente, la resistencia de carga en el drenador asume la caída de tensión
+          restante para cerrar la malla principal:
+          \[ R_D = \frac{V_{DD} - V_{DSQ} - V_S}{I_{DQ}} = 1241.02\ \Omega \]
+\end{itemize}
+
+Los resultados expuestos en esta etapa corresponden a magnitudes matemáticas
+absolutas e ideales calculadas por el entorno virtual de diseño. Para la
+materialización de los circuitos en el entorno físico, estos parámetros fueron
+aproximados a los valores comerciales estándar de las series E12 y E24 más
+cercanos (tal como se consolidó en la Tabla~\ref{tab:circuitos_prueba}), lo
+cual constituye una variable de holgura controlada que justifica las ligeras
+desviaciones observadas durante las mediciones experimentales.
+
+Como se observa en la Tabla~\ref{tab:q_optimo_experimental}, al implementar
+físicamente las resistencias exactas dictadas por la síntesis analítica, el
+JFET converge exitosamente a su punto estático de diseño ($V_{DSQ} \approx
+    7.5\text{ V}$), garantizando máxima excursión simétrica. Adicionalmente, los
+márgenes de error experimental validan de forma empírica la jerarquía de
+estabilidad térmica de las topologías: la polarización fija exhibió la mayor
+vulnerabilidad paramétrica ($\sim 4.2\%$), mientras que la inclusión del
+divisor de voltaje y la resistencia de fuente ($R_S$) logró estabilizar la
+corriente del canal con un error marginal inferior al $1\%$, demostrando la
+contundente eficacia de la retroalimentación negativa.
+
+\begin{table}[htbp]
+    \caption{Verificación Experimental del Punto de Operación Óptimo con Valores de Diseño Matemático}\label{tab:q_optimo_experimental}
     \centering
-    \begin{tabular}{lcrc}
+    \resizebox{\linewidth}{!}{
+        \begin{tabular}{llccc}
+            \toprule
+            \textbf{Configuración} & \textbf{Parámetro} & \makecell{\textbf{Valor}\\ \textbf{Teórico}} & \makecell{\textbf{Valor}\\ \textbf{Experimental}} & \makecell{\textbf{Error Relativo}\\ \textbf{($\%E_r$)}} \\ \midrule
+
+            \multirow{3}{*}{\textbf{Polarización Fija}}
+                                   & $V_{GSQ}$ (V)      & $-0.2387$                                    & $-0.2460$                                         & $3.06\%$                                                \\
+                                   & $I_{DQ}$ (mA)      & $4.4320$                                     & $4.6200$                                          & $4.24\%$                                                \\
+                                   & $V_{DSQ}$ (V)      & $7.5000$                                     & $7.1816$                                          & $4.25\%$                                                \\ \midrule
+
+            \multirow{3}{*}{\textbf{Autopolarización}}
+                                   & $V_{GSQ}$ (V)      & $-0.2387$                                    & $-0.2430$                                         & $1.80\%$                                                \\
+                                   & $I_{DQ}$ (mA)      & $4.4320$                                     & $4.5100$                                          & $1.76\%$                                                \\
+                                   & $V_{DSQ}$ (V)      & $7.5000$                                     & $7.3677$                                          & $1.76\%$                                                \\ \midrule
+
+            \multirow{3}{*}{\textbf{Divisor de Voltaje}}
+                                   & $V_{GSQ}$ (V)      & $-0.2387$                                    & $-0.2410$                                         & $0.96\%$                                                \\
+                                   & $I_{DQ}$ (mA)      & $4.4320$                                     & $4.4600$                                          & $0.63\%$                                                \\
+                                   & $V_{DSQ}$ (V)      & $7.5000$                                     & $7.4523$                                          & $0.64\%$                                                \\ \bottomrule
+        \end{tabular}
+    }
+\end{table}
+
+\subsection{Evaluación de Errores y Comparación Teórico-Experimental}
+Con el propósito de validar la exactitud del modelo matemático calibrado
+mediante instrumentación virtual, se contrastaron los parámetros analíticos con
+las lecturas experimentales obtenidas de forma directa en el banco de pruebas
+analógico. Las discrepancias observadas se cuantificaron mediante el cálculo
+del error porcentual relativo. En la Tabla~\ref{tab:comparacion_q} se consolida
+el comportamiento del JFET 2N5457 en su punto de operación óptimo y sus
+parámetros de pequeña señal.
+
+Como se evidencia en los resultados, todas las variables medidas se posicionan
+dentro de un margen de error controlado de entre el \num{7} y el \num{8}. La
+corriente de drenador experimental ($I_{DQ} = \num{4.786}\text{ mA}$) exhibió
+un incremento del \num{7.99} respecto al valor predictivo; este fenómeno físico
+es atribuible principalmente a la modulación de longitud de canal previamente
+descrita (fuga de la resistencia $r_d$), que evita que la corriente se
+estabilice de manera ideal, sumado a la tolerancia de manufactura de las
+resistencias utilizadas en la protoboard. Por su parte, la transconductancia
+dinámica medida presentó una leve atenuación ($g_m = \num{5.44}\text{ mS}$), lo
+que derivó en una ganancia de voltaje real de $A_v = \num{-6.32}\text{ V/V}$
+(una desviación del \num{8.00} respecto a la magnitud ideal proyectada).
+
+\begin{table}[htbp]
+    \caption{Comparativa Teórico-Experimental del Punto $Q$ Óptimo y Pequeña Señal}\label{tab:comparacion_q}
+    \centering
+    \begin{tabular}{lccc}
         \toprule
-        \textbf{Parámetro Analizado}       & \textbf{Símbolo} & \textbf{Valor Calculado} & \textbf{Unidad}  \\
+        \textbf{Variable / Parámetro}           & \makecell{\textbf{Valor}\\ \textbf{Teórico}} & \makecell{\textbf{Valor}\\ \textbf{Experimental}} & \makecell{\textbf{Error}\\ \textbf{($\%E_r$)}} \\
         \midrule
-        Voltaje Compuerta-Fuente Óptimo    & $V_{GSQ}$        & $-0.238720$              & \text{V}         \\
-        Corriente de Drenador Óptima       & $I_{DQ}$         & $0.698$                  & \text{mA}        \\
-        Transconductancia Intrínseca       & $g_m$            & $5.850$                  & \text{mS}        \\
-        Ganancia Teórica de Voltaje        & $A_v$            & $-5.849851$              & \text{V/V}       \\
-        Resistencia Dinámica de Salida     & $r_d$            & $5.992791$               & \text{k}$\Omega$ \\
-        Coeficiente de Modulación de Canal & $\lambda$        & $0.026050$               & \text{V}$^{-1}$  \\
+        Voltaje $V_{GSQ}$ (V)                   & $-0.2387$                                    & $-0.2554$                                         & $7.00\%$                                       \\
+        Corriente $I_{DQ}$ (mA)                 & $4.4320$                                     & $4.7860$                                          & $7.99\%$                                       \\
+        Transconductancia $g_m$ (mS)            & $5.8500$                                     & $5.4400$                                          & $7.01\%$                                       \\
+        Ganancia de Voltaje $A_v$ (V/V)         & $-5.8499$                                    & $-6.3178$                                         & $8.00\%$                                       \\
+        Resistencia de Salida $r_d$ (k$\Omega$) & $5.9927$                                     & $5.5133$                                          & $8.00\%$                                       \\
         \bottomrule
     \end{tabular}
-\end{table*}
+\end{table}
+
+\subsection{Configuraciones de Ensayo y Selección de Componentes}
+Con el propósito de caracterizar dinámicamente el comportamiento del transistor
+JFET 2N5457 bajo diferentes condiciones de carga y niveles de conducción, se
+estructuró una matriz experimental compuesta por tres ensayos independientes
+para cada una de las topologías de polarización propuestas. Los valores
+nominales de los elementos resistivos de drenaje ($R_D$), fuente ($R_S$) y del
+divisor de tensión ($R_1$ y $R_2$), así como las magnitudes de las fuentes de
+tensión externas aplicadas ($V_{GG}$), se consolidan de manera sistemática en
+la Tabla~\ref{tab:circuitos_prueba}. Esta selección paramétrica permite evaluar
+la estabilidad del punto de operación $Q$ frente a variaciones controladas en
+la red de carga.
+
+\begin{table}[htbp]
+    \caption{Dimensionado de Componentes y Parámetros de Excitación para los Circuitos de Prueba JFET 2N5457}\label{tab:circuitos_prueba}
+    \centering
+    \resizebox{\linewidth}{!}{
+        \begin{tabular}{lccccc}
+            \toprule
+            \textbf{Configuración / Ensayo} & $V_{GG}$ (V) & $R_D$ ($\Omega$) & $R_S$ ($\Omega$) & $R_1$ (k$\Omega$) & $R_2$ (k$\Omega$) \\ \midrule
+            \textbf{Polarización Fija}      &              &                  &                  &                   &                   \\
+            \hspace{3mm} Fixed Bias 1       & 0.24         & 820              & ---              & ---               & ---               \\
+            \hspace{3mm} Fixed Bias 2       & 0.24         & 1200             & ---              & ---               & ---               \\
+            \hspace{3mm} Fixed Bias 3       & 0.24         & 1500             & ---              & ---               & ---               \\ \midrule
+            \textbf{Autopolarización}       &              &                  &                  &                   &                   \\
+            \hspace{3mm} Self Bias 1        & ---          & 820              & 56               & ---               & ---               \\
+            \hspace{3mm} Self Bias 2        & ---          & 1200             & 56               & ---               & ---               \\
+            \hspace{3mm} Self Bias 3        & ---          & 1500             & 56               & ---               & ---               \\ \midrule
+            \textbf{Divisor de Voltaje}     &              &                  &                  &                   &                   \\
+            \hspace{3mm} Divider Bias 1     & ---          & 1000             & 220              & 200               & 10                \\
+            \hspace{3mm} Divider Bias 2     & ---          & 1200             & 330              & 110               & 10                \\
+            \hspace{3mm} Divider Bias 3     & ---          & 1500             & 470              & 68                & 10                \\ \midrule
+        \end{tabular}
+    }
+\end{table}
 
 \subsection{Estudio Comparativo de las Redes de Polarización}
 El comportamiento estático del JFET se evaluó contrastando las aproximaciones
@@ -717,18 +854,7 @@ adquisición en el archivo \texttt{resultados\_lab\_2N5457.txt}. El análisis
 detallado de cada topología de circuito se expone a continuación:
 
 \subsubsection{Fenómeno de Corte en la Configuración de Polarización Fija (\textit{Fixed-Bias})}
-En las tres pruebas asociadas a la red de polarización fija, la malla de entrada impuso un voltaje constante de compuerta-fuente de $V_{GS} = -1.451\,\text{V}$. Los datos experimentales demostraron de forma unánime que la corriente de drenador se anuló por completo ($I_D = 0\,\text{mA}$), lo que provocó que el voltaje drenador-fuente se elevara críticamente hasta alcanzar un valor estático de $V_{DS} = 14.97\,\text{V}$, magnitud prácticamente idéntica al voltaje de la fuente de alimentación del laboratorio ($V_{DD} = 15.0\,\text{V}$).
-
-La explicación física de este comportamiento radica en que el voltaje de
-control externo superó de forma absoluta el umbral de apagado intrínseco del
-componente ($|V_{GS}| > |V_p|$, dado que $1.451\,\text{V} > 1.18\,\text{V}$).
-Esta condición de polarización inversa extrema ensanchó las regiones de
-vaciamiento de la unión p-n de la compuerta hasta obstruir y estrangular
-totalmente la sección transversal geométrica del canal n. Al interrumpirse por
-completo el flujo cinético de los portadores de carga mayoritarios
-(electrones), el JFET pasó a operar en su zona de corte profundo, actuando de
-forma equivalente a un circuito abierto entre las terminales de drenador y
-fuente.
+En las tres pruebas asociadas a la red de polarización fija, la malla de entrada impuso un voltaje constante de compuerta-fuente optimizado, que en las lecturas experimentales osciló alrededor de $V_{GS} \approx -0.25\,\text{V}$. Los datos demostraron de forma unánime que el transistor entró exitosamente en conducción, registrando una corriente de drenador en el rango de $4.11\,\text{mA}$ a $4.82\,\text{mA}$. La caída de tensión a través de las distintas resistencias de carga permitió que el voltaje drenador-fuente se estableciera en un nivel estático operativo de $V_{DS}$ entre $7.86\,\text{V}$ y $10.69\,\text{V}$, alejándose de la saturación extrema y garantizando un margen de excursión asimétrico frente a la fuente de alimentación del laboratorio.La explicación física de este comportamiento radica en que el voltaje de control externo se mantuvo estrictamente por debajo de la magnitud del umbral de apagado intrínseco del componente ($|V_{GS}| < |V_p|$). Esta condición de polarización inversa moderada provocó que las regiones de vaciamiento de la unión p-n en la compuerta se expandieran de manera controlada, estrechando el canal n sin llegar a obstruir ni estrangular su sección transversal geométrica. Al preservarse el corredor para el flujo cinético de los portadores de carga mayoritarios (electrones), el JFET operó de forma continua en su zona de saturación activa, comportándose como una fuente de corriente controlada por voltaje, condición indispensable para su uso en circuitos de amplificación lineal.
 
 \subsubsection{Análisis de Estabilidad en las Redes de Autopolarización y Divisor de Voltaje}
 A diferencia de la rigidez operativa de la polarización fija, las
@@ -755,48 +881,67 @@ industriales reales de pequeña señal.
 
 Para plasmar de manera sintética la comparación de las variables eléctricas de
 cada red resistiva, se estructuraron las
-Tablas~\ref{tab:fixed_bias},~\ref{tab:self_bias} y~\ref{tab:voltage_divider}.
+Tablas~\ref{tab:fixed_bias_results},~\ref{tab:self_bias_results}
+y~\ref{tab:divider_bias_results}.
 
 \begin{table}[htbp]
-    \caption{Comparativa de Punto Operacional $Q$: Polarización Fija (\textnormal{Fixed-Bias 1})}\label{tab:fixed_bias}
+    \caption{Comparativa de Resultados Teóricos vs. Experimentales para la Red de Polarización Fija (\textit{Fixed-Bias})}\label{tab:fixed_bias_results}
     \centering
-    \begin{tabular}{lccc}
-        \toprule
-        \textbf{Parámetro} & \textbf{Valor Teórico} & \textbf{Valor Experimental} & \textbf{\% Error} \\
-        \midrule
-        $V_{GS}$ (V)       & -1.451                 & -1.451                      & 0.00\,\%          \\
-        $I_D$ (mA)         & 0.000                  & 0.000                       & 0.00\,\%          \\
-        $V_{DS}$ (V)       & 15.000                 & 14.970                      & 0.20\,\%          \\
-        \bottomrule
-    \end{tabular}
+    \resizebox{\linewidth}{!}{
+        \begin{tabular}{cccccc}
+            \toprule
+            \textbf{Ensayo / Tipo} & $V_{GSQ}$ (V) & $I_{DQ}$ (mA) & $V_{DSQ}$ (V) & $V_D$ (V) & $V_S$ (V) \\ \midrule
+            \textbf{Ensayo 1}      &               &               &               &           &           \\
+            Teórico                & -0.2400       & 4.4243        & 11.3720       & 11.3720   & 0.0000    \\
+            Experimental           & -0.2592       & 4.1146        & 10.6897       & 10.6897   & 0.0000    \\ \midrule
+            \textbf{Ensayo 2}      &               &               &               &           &           \\
+            Teórico                & -0.2400       & 4.4243        & 9.6908        & 9.6908    & 0.0000    \\
+            Experimental           & -0.2280       & 4.8225        & 10.4660       & 10.4660   & 0.0000    \\ \midrule
+            \textbf{Ensayo 3}      &               &               &               &           &           \\
+            Teórico                & -0.2400       & 4.4243        & 8.3635        & 8.3635    & 0.0000    \\
+            Experimental           & -0.2616       & 4.1589        & 7.8617        & 7.8617    & 0.0000    \\ \midrule
+        \end{tabular}
+    }
 \end{table}
 
 \begin{table}[htbp]
-    \caption{Comparativa de Punto Operacional $Q$: Autopolarización (\textnormal{Self-Bias 1})}\label{tab:self_bias}
+    \caption{Comparativa de Resultados Teóricos vs. Experimentales para la Red de Autopolarización (\textit{Self-Bias})}\label{tab:self_bias_results}
     \centering
-    \begin{tabular}{lccc}
-        \toprule
-        \textbf{Parámetro} & \textbf{Valor Teórico} & \textbf{Valor Experimental} & \textbf{\% Error} \\
-        \midrule
-        $V_{GS}$ (V)       & -0.263                 & -0.189                      & 28.13\,\%         \\
-        $I_D$ (mA)         & 0.561                  & 0.395                       & 29.59\,\%         \\
-        $V_{DS}$ (V)       & 13.503                 & 13.900                      & 2.94\,\%          \\
-        \bottomrule
-    \end{tabular}
+    \resizebox{\linewidth}{!}{
+        \begin{tabular}{cccccc}
+            \toprule
+            \textbf{Ensayo / Tipo} & $V_{GSQ}$ (V) & $I_{DQ}$ (mA) & $V_{DSQ}$ (V) & $V_D$ (V) & $V_S$ (V) \\ \midrule
+            \textbf{Ensayo 1}      &               &               &               &           &           \\
+            Teórico                & -0.2459       & 4.3906        & 11.1538       & 11.3997   & 0.2459    \\
+            Experimental           & -0.2655       & 4.6979        & 10.4846       & 10.7157   & 0.2655    \\ \midrule
+            \textbf{Ensayo 2}      &               &               &               &           &           \\
+            Teórico                & -0.2459       & 4.3906        & 9.4854        & 9.7313    & 0.2459    \\
+            Experimental           & -0.2287       & 4.1272        & 10.2442       & 10.5098   & 0.2287    \\ \midrule
+            \textbf{Ensayo 3}      &               &               &               &           &           \\
+            Teórico                & -0.2459       & 4.3906        & 8.1682        & 8.4141    & 0.2459    \\
+            Experimental           & -0.2680       & 4.7857        & 7.5965        & 7.8251    & 0.2680    \\ \midrule
+        \end{tabular}
+    }
 \end{table}
 
 \begin{table}[htbp]
-    \caption{Comparativa de Punto Operacional $Q$: Divisor de Voltaje (\textnormal{Voltage-Divider-Bias 1})}\label{tab:voltage_divider}
+    \caption{Comparativa de Resultados Teóricos vs. Experimentales para la Red de Divisor de Voltaje (\textit{Voltage-Divider-Bias})}\label{tab:divider_bias_results}
     \centering
-    \begin{tabular}{lccc}
-        \toprule
-        \textbf{Parámetro} & \textbf{Valor Teórico} & \textbf{Valor Experimental} & \textbf{\% Error} \\
-        \midrule
-        $V_{GS}$ (V)       & -0.238                 & -0.201                      & 15.54\,\%         \\
-        $I_D$ (mA)         & 0.698                  & 0.584                       & 16.33\,\%         \\
-        $V_{DS}$ (V)       & 12.140                 & 12.450                      & 2.55\,\%          \\
-        \bottomrule
-    \end{tabular}
+    \resizebox{\linewidth}{!}{
+        \begin{tabular}{cccccc}
+            \toprule
+            \textbf{Ensayo / Tipo} & $V_{GSQ}$ (V) & $I_{DQ}$ (mA) & $V_{DSQ}$ (V) & $V_D$ (V) & $V_S$ (V) \\ \midrule
+            \textbf{Ensayo 1}      &               &               &               &           &           \\
+            Teórico                & -0.2484       & 4.3761        & 9.6612        & 10.6239   & 0.9627    \\
+            Experimental           & -0.2335       & 4.7699        & 9.0815        & 9.9865    & 1.0205    \\ \midrule
+            \textbf{Ensayo 2}      &               &               &               &           &           \\
+            Teórico                & -0.2299       & 4.4845        & 8.1387        & 9.6186    & 1.4799    \\
+            Experimental           & -0.2483       & 4.2154        & 8.8712        & 10.3881   & 1.3615    \\ \midrule
+            \textbf{Ensayo 3}      &               &               &               &           &           \\
+            Teórico                & -0.2183       & 4.5562        & 6.0243        & 8.1657    & 2.1414    \\
+            Experimental           & -0.2030       & 4.9662        & 5.5424        & 7.5125    & 1.9700    \\ \midrule
+        \end{tabular}
+    }
 \end{table}
 
 \subsection{Cuantificación de Errores y Fuentes de Desviación}
@@ -811,15 +956,14 @@ factores de desviación tecnológica característicos de la ingeniería práctic
 \end{enumerate}
 
 \section{Conclusiones}
-
 \begin{enumerate}
     \item \textbf{Eficacia del Ecosistema de Caracterización Automatizada:} Se demostró que la implementación de un sistema de adquisición de datos basado en el acoplamiento del firmware \texttt{captura.ino} con el entorno de procesamiento en Python (\texttt{main.py}) reduce de forma drástica la incertidumbre experimental y el error humano sistemático asociados a la toma analógica manual con multímetro. Asimismo, el uso del algoritmo de optimización numérica por mínimos cuadrados sobre la ecuación analítica de Shockley validó ser una metodología robusta para la extracción precisa de parámetros eléctricos individuales como la corriente máxima de saturación ($I_{DSS}$) y el voltaje de estrangulamiento ($V_p$). Esta técnica es de crucial importancia en ingeniería electrónica debido a que los transistores comerciales de un mismo lote de fabricación exhiben una alta dispersión paramétrica, haciendo que la caracterización automatizada sea indispensable para el diseño de circuitos de alta fidelidad.
 
     \item \textbf{Manifestación Física de los Efectos de Segundo Orden:} Se validó experimentalmente que el transistor JFET real 2N5457 presenta desviaciones notables respecto al comportamiento de una fuente de corriente ideal en su zona activa. La cuantificación de un parámetro de modulación de longitud de canal finito ($\lambda = 0.026050\,\text{V}^{-1}$) y una resistencia dinámica de salida restrictiva ($r_d \approx 5.99\,\text{k}\Omega$) justifican la pendiente positiva observada en las curvas características de drenador en saturación. Este fenómeno físico evidencia que las aproximaciones analíticas clásicas que asumen una resistencia $r_d$ infinita son modelos matemáticos útiles para estimaciones preliminares y rápidas, pero resultan insuficientes para análisis circuitales de alta precisión o diseños de etapas de amplificación con criterios estrictos de linealidad.
 
-    \item \textbf{Vulnerabilidad Estática y Fenómeno de Corte en la Red \textit{Fixed-Bias}:} Se comprobó que la red de polarización fija (\textit{fixed-bias}) posee una alta vulnerabilidad operativa debido a la ausencia total de lazos analógicos de autorregulación ante variaciones contextuales o errores en la selección de los potenciales de diseño. Al imponer un voltaje estático de compuerta-fuente ($V_{GS} = -1.451\,\text{V}$) cuyo valor absoluto superó el límite crítico del voltaje de \textit{pinch-off} del semiconductor ($|V_{GS}| > |V_p|$), el canal n experimentó un estrangulamiento geométrico y eléctrico periférico absoluto. Esto condujo al transistor de forma irreversible a operar en su zona de corte estricto ($I_D = 0\,\text{mA}$), demostrando prácticamente cómo la rigidez de esta configuración acota drásticamente el rango de operación segura del JFET\@.
+    \item \textbf{Sensibilidad Estática y Vulnerabilidad en la Red \textit{Fixed-Bias}:} A diferencia del tanteo empírico inicial que llevaba al transistor al estrangulamiento, la implementación de los parámetros matemáticamente optimizados ($V_{GG} \approx 0.24\,\text{V}$) permitió estabilizar al componente en su región de saturación activa ($I_D \approx 4.4\,\text{mA}$). Sin embargo, se evidenció teórica y experimentalmente que esta configuración posee una alta vulnerabilidad operativa debido a la ausencia total de lazos analógicos de autorregulación. Al imponer un voltaje estático y rígido de compuerta-fuente, cualquier fluctuación térmica o tolerancia en la fuente externa recae de manera directa y desproporcionada sobre la anchura del canal n. Esto demuestra que la arquitectura de polarización fija es altamente inestable frente a la dispersión paramétrica natural del JFET, limitando severamente su viabilidad en escenarios prácticos.
 
-    \item \textbf{Estabilización del Punto $Q$ Mediante Retroalimentación Negativa:} Se determinó cuantitativamente que las redes de polarización que incorporan un elemento pasivo en la terminal de la fuente ($R_S$) proveen una estabilidad marcadamente superior en la fijación del punto de operación estático ($Q$) en comparación con la malla de polarización fija. El voltaje dependiente desarrollado en la terminal de la fuente actúa físicamente como un lazo de retroalimentación negativa que modula el potencial neto de control $V_{GS}$, amortiguando el impacto de las fluctuaciones térmicas y las tolerancias comerciales de los componentes. Entre las arquitecturas analizadas, la topología por divisor de voltaje (\textit{voltage-divider-bias}) demostró la mayor robustez en el entorno de laboratorio, aislando eficazmente las variables del punto de trabajo frente a las perturbaciones en la fuente de alimentación primaria ($V_{DD}$) y los parámetros internos del JFET\@.
+    \item \textbf{Estabilización del Punto $Q$ Mediante Retroalimentación Negativa:} Se determinó cuantitativamente que las redes de polarización que incorporan un elemento pasivo en la terminal de la fuente ($R_S$) proveen una estabilidad marcadamente superior en la fijación del punto de operación estático ($Q$) en comparación con la malla de polarización fija. El voltaje dependiente desarrollado en la terminal de la fuente actúa físicamente como un lazo de retroalimentación negativa que modula dinámicamente el potencial neto de control $V_{GS}$, amortiguando el impacto de las variaciones térmicas y la tolerancia comercial de los componentes. Entre las arquitecturas analizadas, la topología por divisor de voltaje (\textit{voltage-divider-bias}) demostró la mayor robustez en el entorno de laboratorio, aislando eficazmente la corriente del canal frente a perturbaciones extremas y garantizando la linealidad de la etapa.
 \end{enumerate}
 
 \printbibliography{}

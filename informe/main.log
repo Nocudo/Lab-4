@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.5.29)  2 JUN 2026 07:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.5.29)  3 JUN 2026 00:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -810,6 +810,12 @@ Package caption Info: New subtype `subfigure' on input line 238.
 \c@subfigure=\count381
 Package caption Info: New subtype `subtable' on input line 238.
 \c@subtable=\count382
+) (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/multirow\multirow.sty
+Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
+\multirow@colwidth=\skip67
+\multirow@cntb=\count383
+\multirow@dima=\skip68
+\bigstrutjot=\dimen364
 ) (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.sty
 Package: biblatex 2025/07/10 v3.21 programmable bibliographies (PK/MW)
  (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
@@ -818,67 +824,67 @@ Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
 )) (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count383
+\lrq@indent=\count384
  (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 ))
-\c@tabx@nest=\count384
-\c@listtotal=\count385
-\c@listcount=\count386
-\c@liststart=\count387
-\c@liststop=\count388
-\c@citecount=\count389
-\c@citetotal=\count390
-\c@multicitecount=\count391
-\c@multicitetotal=\count392
-\c@instcount=\count393
-\c@maxnames=\count394
-\c@minnames=\count395
-\c@maxitems=\count396
-\c@minitems=\count397
-\c@citecounter=\count398
-\c@maxcitecounter=\count399
-\c@savedcitecounter=\count400
-\c@uniquelist=\count401
-\c@uniquename=\count402
-\c@refsection=\count403
-\c@refsegment=\count404
-\c@maxextratitle=\count405
-\c@maxextratitleyear=\count406
-\c@maxextraname=\count407
-\c@maxextradate=\count408
-\c@maxextraalpha=\count409
-\c@abbrvpenalty=\count410
-\c@highnamepenalty=\count411
-\c@lownamepenalty=\count412
-\c@maxparens=\count413
-\c@parenlevel=\count414
-\blx@tempcnta=\count415
-\blx@tempcntb=\count416
-\blx@tempcntc=\count417
-\c@blx@maxsection=\count418
-\blx@maxsegment@0=\count419
-\blx@notetype=\count420
-\blx@parenlevel@text=\count421
-\blx@parenlevel@foot=\count422
-\blx@sectionciteorder@0=\count423
-\blx@sectionciteorderinternal@0=\count424
-\blx@entrysetcounter=\count425
-\blx@biblioinstance=\count426
-\labelnumberwidth=\skip67
-\labelalphawidth=\skip68
-\biblabelsep=\skip69
-\bibitemsep=\skip70
-\bibnamesep=\skip71
-\bibinitsep=\skip72
-\bibparsep=\skip73
-\bibhang=\skip74
+\c@tabx@nest=\count385
+\c@listtotal=\count386
+\c@listcount=\count387
+\c@liststart=\count388
+\c@liststop=\count389
+\c@citecount=\count390
+\c@citetotal=\count391
+\c@multicitecount=\count392
+\c@multicitetotal=\count393
+\c@instcount=\count394
+\c@maxnames=\count395
+\c@minnames=\count396
+\c@maxitems=\count397
+\c@minitems=\count398
+\c@citecounter=\count399
+\c@maxcitecounter=\count400
+\c@savedcitecounter=\count401
+\c@uniquelist=\count402
+\c@uniquename=\count403
+\c@refsection=\count404
+\c@refsegment=\count405
+\c@maxextratitle=\count406
+\c@maxextratitleyear=\count407
+\c@maxextraname=\count408
+\c@maxextradate=\count409
+\c@maxextraalpha=\count410
+\c@abbrvpenalty=\count411
+\c@highnamepenalty=\count412
+\c@lownamepenalty=\count413
+\c@maxparens=\count414
+\c@parenlevel=\count415
+\blx@tempcnta=\count416
+\blx@tempcntb=\count417
+\blx@tempcntc=\count418
+\c@blx@maxsection=\count419
+\blx@maxsegment@0=\count420
+\blx@notetype=\count421
+\blx@parenlevel@text=\count422
+\blx@parenlevel@foot=\count423
+\blx@sectionciteorder@0=\count424
+\blx@sectionciteorderinternal@0=\count425
+\blx@entrysetcounter=\count426
+\blx@biblioinstance=\count427
+\labelnumberwidth=\skip69
+\labelalphawidth=\skip70
+\biblabelsep=\skip71
+\bibitemsep=\skip72
+\bibnamesep=\skip73
+\bibinitsep=\skip74
+\bibparsep=\skip75
+\bibhang=\skip76
 \blx@bcfin=\read3
 \blx@bcfout=\write4
 \blx@langwohyphens=\language79
-\c@mincomprange=\count427
-\c@maxcomprange=\count428
-\c@mincompwidth=\count429
+\c@mincomprange=\count428
+\c@maxcomprange=\count429
+\c@mincompwidth=\count430
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
  (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-dm.def
@@ -888,88 +894,88 @@ Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'ieee.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count430
-\c@savedafterword=\count431
-\c@annotator=\count432
-\c@savedannotator=\count433
-\c@author=\count434
-\c@savedauthor=\count435
-\c@bookauthor=\count436
-\c@savedbookauthor=\count437
-\c@commentator=\count438
-\c@savedcommentator=\count439
-\c@editor=\count440
-\c@savededitor=\count441
-\c@editora=\count442
-\c@savededitora=\count443
-\c@editorb=\count444
-\c@savededitorb=\count445
-\c@editorc=\count446
-\c@savededitorc=\count447
-\c@foreword=\count448
-\c@savedforeword=\count449
-\c@holder=\count450
-\c@savedholder=\count451
-\c@introduction=\count452
-\c@savedintroduction=\count453
-\c@namea=\count454
-\c@savednamea=\count455
-\c@nameb=\count456
-\c@savednameb=\count457
-\c@namec=\count458
-\c@savednamec=\count459
-\c@translator=\count460
-\c@savedtranslator=\count461
-\c@shortauthor=\count462
-\c@savedshortauthor=\count463
-\c@shorteditor=\count464
-\c@savedshorteditor=\count465
-\c@labelname=\count466
-\c@savedlabelname=\count467
-\c@institution=\count468
-\c@savedinstitution=\count469
-\c@lista=\count470
-\c@savedlista=\count471
-\c@listb=\count472
-\c@savedlistb=\count473
-\c@listc=\count474
-\c@savedlistc=\count475
-\c@listd=\count476
-\c@savedlistd=\count477
-\c@liste=\count478
-\c@savedliste=\count479
-\c@listf=\count480
-\c@savedlistf=\count481
-\c@location=\count482
-\c@savedlocation=\count483
-\c@organization=\count484
-\c@savedorganization=\count485
-\c@origlocation=\count486
-\c@savedoriglocation=\count487
-\c@origpublisher=\count488
-\c@savedorigpublisher=\count489
-\c@publisher=\count490
-\c@savedpublisher=\count491
-\c@language=\count492
-\c@savedlanguage=\count493
-\c@origlanguage=\count494
-\c@savedoriglanguage=\count495
-\c@pageref=\count496
-\c@savedpageref=\count497
-\shorthandwidth=\skip75
-\shortjournalwidth=\skip76
-\shortserieswidth=\skip77
-\shorttitlewidth=\skip78
-\shortauthorwidth=\skip79
-\shorteditorwidth=\skip80
-\locallabelnumberwidth=\skip81
-\locallabelalphawidth=\skip82
-\localshorthandwidth=\skip83
-\localshortjournalwidth=\skip84
-\localshortserieswidth=\skip85
-\localshorttitlewidth=\skip86
-\localshortauthorwidth=\skip87
-\localshorteditorwidth=\skip88
+\c@afterword=\count431
+\c@savedafterword=\count432
+\c@annotator=\count433
+\c@savedannotator=\count434
+\c@author=\count435
+\c@savedauthor=\count436
+\c@bookauthor=\count437
+\c@savedbookauthor=\count438
+\c@commentator=\count439
+\c@savedcommentator=\count440
+\c@editor=\count441
+\c@savededitor=\count442
+\c@editora=\count443
+\c@savededitora=\count444
+\c@editorb=\count445
+\c@savededitorb=\count446
+\c@editorc=\count447
+\c@savededitorc=\count448
+\c@foreword=\count449
+\c@savedforeword=\count450
+\c@holder=\count451
+\c@savedholder=\count452
+\c@introduction=\count453
+\c@savedintroduction=\count454
+\c@namea=\count455
+\c@savednamea=\count456
+\c@nameb=\count457
+\c@savednameb=\count458
+\c@namec=\count459
+\c@savednamec=\count460
+\c@translator=\count461
+\c@savedtranslator=\count462
+\c@shortauthor=\count463
+\c@savedshortauthor=\count464
+\c@shorteditor=\count465
+\c@savedshorteditor=\count466
+\c@labelname=\count467
+\c@savedlabelname=\count468
+\c@institution=\count469
+\c@savedinstitution=\count470
+\c@lista=\count471
+\c@savedlista=\count472
+\c@listb=\count473
+\c@savedlistb=\count474
+\c@listc=\count475
+\c@savedlistc=\count476
+\c@listd=\count477
+\c@savedlistd=\count478
+\c@liste=\count479
+\c@savedliste=\count480
+\c@listf=\count481
+\c@savedlistf=\count482
+\c@location=\count483
+\c@savedlocation=\count484
+\c@organization=\count485
+\c@savedorganization=\count486
+\c@origlocation=\count487
+\c@savedoriglocation=\count488
+\c@origpublisher=\count489
+\c@savedorigpublisher=\count490
+\c@publisher=\count491
+\c@savedpublisher=\count492
+\c@language=\count493
+\c@savedlanguage=\count494
+\c@origlanguage=\count495
+\c@savedoriglanguage=\count496
+\c@pageref=\count497
+\c@savedpageref=\count498
+\shorthandwidth=\skip77
+\shortjournalwidth=\skip78
+\shortserieswidth=\skip79
+\shorttitlewidth=\skip80
+\shortauthorwidth=\skip81
+\shorteditorwidth=\skip82
+\locallabelnumberwidth=\skip83
+\locallabelalphawidth=\skip84
+\localshorthandwidth=\skip85
+\localshortjournalwidth=\skip86
+\localshortserieswidth=\skip87
+\localshorttitlewidth=\skip88
+\localshortauthorwidth=\skip89
+\localshorteditorwidth=\skip90
 Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
  (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-compat.def
@@ -979,19 +985,19 @@ Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
  (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.def
 File: biblatex.def 2025/07/10 v3.21 biblatex compatibility (PK/MW)
-\c@textcitecount=\count498
-\c@textcitetotal=\count499
-\c@textcitemaxnames=\count500
-\c@biburlbigbreakpenalty=\count501
-\c@biburlbreakpenalty=\count502
-\c@biburlnumpenalty=\count503
-\c@biburlucpenalty=\count504
-\c@biburllcpenalty=\count505
+\c@textcitecount=\count499
+\c@textcitetotal=\count500
+\c@textcitemaxnames=\count501
+\c@biburlbigbreakpenalty=\count502
+\c@biburlbreakpenalty=\count503
+\c@biburlnumpenalty=\count504
+\c@biburlucpenalty=\count505
+\c@biburllcpenalty=\count506
 \biburlbigskip=\muskip19
 \biburlnumskip=\muskip20
 \biburlucskip=\muskip21
 \biburllcskip=\muskip22
-\c@smartand=\count506
+\c@smartand=\count507
 )
 Package biblatex Info: Trying to load bibliography style 'ieee'...
 Package biblatex Info: ... file 'ieee.bbx' found.
@@ -1009,8 +1015,8 @@ Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
  (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\standard.bbx
 File: standard.bbx 2025/07/10 v3.21 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count507
-\c@bbx:relatedtotal=\count508
+\c@bbx:relatedcount=\count508
+\c@bbx:relatedtotal=\count509
 ))))
 Package biblatex Info: Trying to load citation style 'ieee'...
 Package biblatex Info: ... file 'ieee.cbx' found.
@@ -1042,7 +1048,7 @@ Package biblatex Info: Document encoding is UTF8 ....
 Package: expl3 2026-04-28 L3 programming layer (loader) 
  (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2026-02-18 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count509
+\l__color_backend_stack_int=\count510
 ))
 Package biblatex Info: ... and expl3
 (biblatex)             2026-04-28 L3 programming layer (loader) 
@@ -1053,7 +1059,7 @@ Package: xparse 2025-10-09 L3 Experimental document command parser
 )
 Package: blx-case-expl3 2025/07/10 v3.21 expl3 case changing code for biblatex
 ))
-** ATTENTION: Overriding command lockouts (line 28).
+** ATTENTION: Overriding command lockouts (line 29).
 (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryshapes.geometric.code.tex
 File: tikzlibraryshapes.geometric.code.tex 2025-08-29 v3.1.11a (3.1.11a)
  (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shapes\pgflibraryshapes.geometric.code.tex
@@ -1062,7 +1068,7 @@ File: pgflibraryshapes.geometric.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 File: tikzlibraryarrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
  (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryarrows.code.tex
 File: pgflibraryarrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\arrowsize=\dimen364
+\arrowsize=\dimen365
 )) (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarypositioning.code.tex
 File: tikzlibrarypositioning.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ) (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarypatterns.code.tex
@@ -1070,38 +1076,38 @@ File: tikzlibrarypatterns.code.tex 2025-08-29 v3.1.11a (3.1.11a)
  (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibrarypatterns.code.tex
 File: pgflibrarypatterns.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ))
-Package translations Info: No language package found. I am going to use `english' as default language. on input line 64.
-\@quotelevel=\count510
-\@quotereset=\count511
+Package translations Info: No language package found. I am going to use `english' as default language. on input line 65.
+\@quotelevel=\count511
+\@quotereset=\count512
  (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for U/mathx/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for U/mathx/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
  (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count512
-\scratchdimen=\dimen365
+\scratchcounter=\count513
+\scratchdimen=\dimen366
 \scratchbox=\box86
-\nofMPsegments=\count513
-\nofMParguments=\count514
+\nofMPsegments=\count514
+\nofMParguments=\count515
 \everyMPshowfont=\toks53
-\MPscratchCnt=\count515
-\MPscratchDim=\dimen366
-\MPnumerator=\count516
-\makeMPintoPDFobject=\count517
+\MPscratchCnt=\count516
+\MPscratchDim=\dimen367
+\MPnumerator=\count517
+\makeMPintoPDFobject=\count518
 \everyMPtoPDFconversion=\toks54
 ) (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1109,13 +1115,13 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-\c@lstlisting=\count518
+\c@lstlisting=\count519
  (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/translations/dicts\translations-basic-dictionary-english.trsl
 File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
 )
-Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 64.
-LaTeX Info: Command `\dddot' is already robust on input line 64.
-LaTeX Info: Command `\ddddot' is already robust on input line 64.
+Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 65.
+LaTeX Info: Command `\dddot' is already robust on input line 65.
+LaTeX Info: Command `\ddddot' is already robust on input line 65.
 
 Package pgfplots notification 'compat/show suggested version=true': document has been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
@@ -1134,27 +1140,27 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
  (main.bbl)
-Package biblatex Info: Reference section=0 on input line 64.
-Package biblatex Info: Reference segment=0 on input line 64.
+Package biblatex Info: Reference section=0 on input line 65.
+Package biblatex Info: Reference segment=0 on input line 65.
 
-** ATTENTION: \authorblockN is deprecated (line 86). Use \IEEEauthorblockN instead.
-** ATTENTION: \authorblockA is deprecated (line 86). Use \IEEEauthorblockA instead.
+** ATTENTION: \authorblockN is deprecated (line 87). Use \IEEEauthorblockN instead.
+** ATTENTION: \authorblockA is deprecated (line 87). Use \IEEEauthorblockA instead.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 86.
+(Font)              <7> on input line 87.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 86.
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 86.
+(Font)              <5> on input line 87.
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 87.
 (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-** ATTENTION: \authorblockN is deprecated (line 86). Use \IEEEauthorblockN instead.
-** ATTENTION: \authorblockA is deprecated (line 86). Use \IEEEauthorblockA instead.
+** ATTENTION: \authorblockN is deprecated (line 87). Use \IEEEauthorblockN instead.
+** ATTENTION: \authorblockA is deprecated (line 87). Use \IEEEauthorblockA instead.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 90.
+(Font)              <9> on input line 91.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 90.
+(Font)              <6> on input line 91.
 
-Underfull \hbox (badness 1888) in paragraph at lines 164--164
+Underfull \hbox (badness 1888) in paragraph at lines 165--165
  [][]\T1/ptm/m/n/9 Región de
  []
 
@@ -1168,46 +1174,56 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <voltaje.png, id=41, 722.7pt x 361.35pt>
 File: voltaje.png Graphic file (type png)
 <use voltaje.png>
-Package pdftex.def Info: voltaje.png  used on input line 612.
+Package pdftex.def Info: voltaje.png  used on input line 609.
 (pdftex.def)             Requested size: 252.0pt x 126.00021pt.
 <corriente.png, id=43, 722.7pt x 361.35pt>
 File: corriente.png Graphic file (type png)
 <use corriente.png>
-Package pdftex.def Info: corriente.png  used on input line 618.
+Package pdftex.def Info: corriente.png  used on input line 621.
 (pdftex.def)             Requested size: 252.0pt x 126.00021pt.
 <regresion_corriente.png, id=44, 722.7pt x 361.35pt>
 File: regresion_corriente.png Graphic file (type png)
 <use regresion_corriente.png>
-Package pdftex.def Info: regresion_corriente.png  used on input line 640.
+Package pdftex.def Info: regresion_corriente.png  used on input line 635.
 (pdftex.def)             Requested size: 252.0pt x 126.00021pt.
-<curva_transferencia.png, id=45, 722.7pt x 361.35pt>
-File: curva_transferencia.png Graphic file (type png)
-<use curva_transferencia.png>
-Package pdftex.def Info: curva_transferencia.png  used on input line 646.
-(pdftex.def)             Requested size: 252.0pt x 126.00021pt.
-
-Underfull \hbox (badness 1616) in paragraph at lines 647--647
-[]\T1/ptm/m/n/10 Fig. 14: |Curva de trans-fer-en-cia ex-per-i-men-tal y mod-elo
- []
-
-<familia_curvas.png, id=46, 722.7pt x 361.35pt>
+<familia_curvas.png, id=45, 722.7pt x 361.35pt>
 File: familia_curvas.png Graphic file (type png)
 <use familia_curvas.png>
-Package pdftex.def Info: familia_curvas.png  used on input line 663.
+Package pdftex.def Info: familia_curvas.png  used on input line 651.
 (pdftex.def)             Requested size: 252.0pt x 126.00021pt.
-[6 <./voltaje.png> <./corriente.png> <./regresion_corriente.png> <./curva_transferencia.png>]
+<curva_transferencia.png, id=46, 722.7pt x 361.35pt>
+File: curva_transferencia.png Graphic file (type png)
+<use curva_transferencia.png>
+Package pdftex.def Info: curva_transferencia.png  used on input line 665.
+(pdftex.def)             Requested size: 252.0pt x 126.00021pt.
+
+Underfull \hbox (badness 1616) in paragraph at lines 666--666
+[]\T1/ptm/m/n/10 Fig. 15: |Curva de trans-fer-en-cia ex-per-i-men-tal y mod-elo
+ []
+
+[6 <./voltaje.png> <./corriente.png> <./regresion_corriente.png> <./familia_curvas.png>]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 699.
- [7 <./familia_curvas.png>]
-Underfull \hbox (badness 1430) in paragraph at lines 816--817
+(Font)              <8> on input line 775.
+ [7 <./curva_transferencia.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 778--778
+ \T1/ptm/m/it/10 C. Eval-u-ación de Er-rores y Com-para-ción Teórico-
+ []
+
+
+Underfull \hbox (badness 1472) in paragraph at lines 779--786
+[]\T1/ptm/m/n/10 Con el propósito de val-i-dar la ex-ac-ti-tud del mod-elo
+ []
+
+[8]
+Underfull \vbox (badness 1371) has occurred while \output is active []
+
+
+Underfull \hbox (badness 1430) in paragraph at lines 960--961
 \T1/ptm/m/n/10 un sis-tema de adquisi-ción de datos basado en el
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [8]
-Underfull \hbox (badness 2050) in paragraph at lines 822--823
+[9]
+Underfull \hbox (badness 2050) in paragraph at lines 966--967
 []\T1/ptm/b/n/10 Estabilización del Punto $\OML/cmm/m/it/10 Q$ \T1/ptm/b/n/10 Me-di-ante Retroal-i-
  []
 
@@ -1222,9 +1238,7 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[9
-
-] (main.aux)
+[10] (main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-04-28>
@@ -1234,17 +1248,17 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 62442 strings out of 467683
- 1633695 string characters out of 5414721
- 2747000 words of memory out of 5000000
- 90844 multiletter control sequences out of 15000+600000
+ 62507 strings out of 467683
+ 1634952 string characters out of 5414721
+ 2747657 words of memory out of 5000000
+ 90906 multiletter control sequences out of 15000+600000
  751795 words of font info for 177 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,19n,108p,1753b,2235s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\rodri\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi600\matha8.pk> <C:\Users\rodri\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi600\matha7.pk> <C:\Users\rodri\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi600\mathx10.pk> <C:\Users\rodri\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi600\matha10.pk> <C:\Users\rodri\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi600\matha6.pk> <C:\Users\rodri\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi600\matha9.pk><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (9 pages, 592249 bytes).
+Output written on main.pdf (10 pages, 608540 bytes).
 PDF statistics:
- 178 PDF objects out of 1000 (max. 8388607)
+ 182 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  42 words of extra memory for PDF output out of 10000 (max. 10000000)
 

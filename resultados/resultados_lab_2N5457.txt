@@ -1,45 +1,54 @@
+=== REPORTE DE LABORATOTIO DEL TRANSISTOR: 2N5457 ===
 
->> CONFIGURACIÓN: Fixed Bias 1
-  Punto Q: V_GSQ = -1.451 V,  I_DQ = 0 mA,  V_DSQ = 14.97 V
-  Voltajes Nodos: V_D = 14.97 V,  V_G = -1.451 V,  V_S = 0 V
-  Corrientes:     I_D = 0 mA,  I_S = 0 mA,  I_G = 0 A
+--- PUNTO DE TRABAJO ESTÁTICO (MÉTODO GRÁFICO SELF-BIAS R_S=470) ---
+V_GSQ = -0.238720 V
+I_DQ  = 0.004432 A
+V_DSQ Objetivo de Diseño = 7.5000 V
 
->> CONFIGURACIÓN: Fixed Bias 2
-  Punto Q: V_GSQ = -1.451 V,  I_DQ = 0 mA,  V_DSQ = 14.97 V
-  Voltajes Nodos: V_D = 14.97 V,  V_G = -1.451 V,  V_S = 0 V
-  Corrientes:     I_D = 0 mA,  I_S = 0 mA,  I_G = 0 A
+=== RESULTADOS DE LABORATORIO DE POLARIZACIÓN (GUÍA LAB 3) ===
+Voltaje de alimentación V_DD asumido: 15.8 V
 
->> CONFIGURACIÓN: Fixed Bias 3
-  Punto Q: V_GSQ = -1.451 V,  I_DQ = 0 mA,  V_DSQ = 14.97 V
-  Voltajes Nodos: V_D = 14.97 V,  V_G = -1.451 V,  V_S = 0 V
-  Corrientes:     I_D = 0 mA,  I_S = 0 mA,  I_G = 0 A
+CONFIGURACIÓN: Fixed Bias 1
+Punto Q: V_GSQ = -0.259200 V,  I_DQ = 4.114639 mA,  V_DSQ = 10.689715 V
+Voltajes Nodos: V_D = 10.689715 V,  V_G = -0.259200 V,  V_S = 0.000000 V
+Corrientes:     I_D = 4.114639 mA,  I_S = 4.114639 mA,  I_G = 0.0 A
 
->> CONFIGURACIÓN: Self Bias 1
-  Punto Q: V_GSQ = -0.1897 V,  I_DQ = 0.3946 mA,  V_DSQ = 13.90 V
-  Voltajes Nodos: V_D = 14.09 V,  V_G = 0 V,  V_S = 0.1898 V
-  Corrientes:     I_D = 0.3946 mA,  I_S = 0.3676 mA,  I_G = 0 A
+CONFIGURACIÓN: Fixed Bias 2
+Punto Q: V_GSQ = -0.228000 V,  I_DQ = 4.822534 mA,  V_DSQ = 10.466049 V
+Voltajes Nodos: V_D = 10.466049 V,  V_G = -0.228000 V,  V_S = 0.000000 V
+Corrientes:     I_D = 4.822534 mA,  I_S = 4.822534 mA,  I_G = 0.0 A
 
->> CONFIGURACIÓN: Self Bias 2
-  Punto Q: V_GSQ = -0.2241 V,  I_DQ = 0.2209 mA,  V_DSQ = 14.01 V
-  Voltajes Nodos: V_D = 14.23 V,  V_G = 0 V,  V_S = 0.2241 V
-  Corrientes:     I_D = 0.2209 mA,  I_S = 0.2131 mA,  I_G = 0 A
+CONFIGURACIÓN: Fixed Bias 3
+Punto Q: V_GSQ = -0.261600 V,  I_DQ = 4.158883 mA,  V_DSQ = 7.861674 V
+Voltajes Nodos: V_D = 7.861674 V,  V_G = -0.261600 V,  V_S = 0.000000 V
+Corrientes:     I_D = 4.158883 mA,  I_S = 4.158883 mA,  I_G = 0.0 A
 
->> CONFIGURACIÓN: Self Bias 2
-  Punto Q: V_GSQ = -0.2574 V,  I_DQ = 0.1161 mA,  V_DSQ = 14.16 V
-  Voltajes Nodos: V_D = 14.42 V,  V_G = 0 V,  V_S = 0.2571 V
-  Corrientes:     I_D = 0.1161 mA,  I_S = 0.1141 mA,  I_G = 0 A
+CONFIGURACIÓN: Self Bias 1
+Punto Q: V_GSQ = -0.265542 V,  I_DQ = 4.697935 mA,  V_DSQ = 10.484609 V
+Voltajes Nodos: V_D = 10.715730 V,  V_G = 0.000000 V,  V_S = 0.265542 V
+Corrientes:     I_D = 4.697935 mA,  I_S = 4.697935 mA,  I_G = 0.0 A
 
->> CONFIGURACIÓN: Divider Bias 1
-Punto Q: V_GSQ = -0.150569 V,  I_DQ = 1.514205 mA,  V_DSQ = 10.154544 V
-Voltajes Nodos: V_D = 11.668749 V,  V_G = 1.363636 V,  V_S = 1.514205 V
-Corrientes:     I_D = 1.514205 mA,  I_S = 1.514205 mA,  I_G = 0.0 A
+CONFIGURACIÓN: Self Bias 2
+Punto Q: V_GSQ = -0.228661 V,  I_DQ = 4.127158 mA,  V_DSQ = 10.244247 V
+Voltajes Nodos: V_D = 10.509791 V,  V_G = 0.000000 V,  V_S = 0.228661 V
+Corrientes:     I_D = 4.127158 mA,  I_S = 4.127158 mA,  I_G = 0.0 A
 
->> CONFIGURACIÓN: Divider Bias 2
-Punto Q: V_GSQ = -0.216712 V,  I_DQ = 0.718340 mA,  V_DSQ = 11.049130 V
-Voltajes Nodos: V_D = 12.629478 V,  V_G = 1.363636 V,  V_S = 1.580348 V
-Corrientes:     I_D = 0.718340 mA,  I_S = 0.718340 mA,  I_G = 0.0 A
+CONFIGURACIÓN: Self Bias 3
+Punto Q: V_GSQ = -0.267991 V,  I_DQ = 4.785747 mA,  V_DSQ = 7.596459 V
+Voltajes Nodos: V_D = 7.825122 V,  V_G = 0.000000 V,  V_S = 0.267991 V
+Corrientes:     I_D = 4.785747 mA,  I_S = 4.785747 mA,  I_G = 0.0 A
 
->> CONFIGURACIÓN: Divider Bias 3
-Punto Q: V_GSQ = -0.303260 V,  I_DQ = 0.505120 mA,  V_DSQ = 10.959040 V
-Voltajes Nodos: V_D = 12.625936 V,  V_G = 1.363636 V,  V_S = 1.666896 V
-Corrientes:     I_D = 0.505120 mA,  I_S = 0.505120 mA,  I_G = 0.0 A
+CONFIGURACIÓN: Divider Bias 1
+Punto Q: V_GSQ = -0.233541 V,  I_DQ = 4.769908 mA,  V_DSQ = 9.081530 V
+Voltajes Nodos: V_D = 9.986500 V,  V_G = 0.764286 V,  V_S = 1.020500 V
+Corrientes:     I_D = 4.769908 mA,  I_S = 4.769908 mA,  I_G = 0.0 A
+
+CONFIGURACIÓN: Divider Bias 2
+Punto Q: V_GSQ = -0.248270 V,  I_DQ = 4.215414 mA,  V_DSQ = 8.871226 V
+Voltajes Nodos: V_D = 10.388108 V,  V_G = 1.150000 V,  V_S = 1.361490 V
+Corrientes:     I_D = 4.215414 mA,  I_S = 4.215414 mA,  I_G = 0.0 A
+
+CONFIGURACIÓN: Divider Bias 3
+Punto Q: V_GSQ = -0.203046 V,  I_DQ = 4.966241 mA,  V_DSQ = 5.542370 V
+Voltajes Nodos: V_D = 7.512465 V,  V_G = 1.769230 V,  V_S = 1.969990 V
+Corrientes:     I_D = 4.966241 mA,  I_S = 4.966241 mA,  I_G = 0.0 A

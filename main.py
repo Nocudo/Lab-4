@@ -25,29 +25,26 @@ LS_V_GS = -0.149          # Límite superior para filtrar datos de V_G
 
 V_DD_LAB = 15.0
 RESISTENCIA = 221.0  # Resistencia de shunt R1
-RES_CARGA = 1000.0  # Resistencia de carga para cálculo de ganancia
+RES_CARGA = 1000.0   # Resistencia de carga para cálculo de ganancia
 
 RUTA_TRANSISTORES = Path("./transistores")
 RUTA_RESULTADOS = Path("./resultados")
 
 CIRCUITOS_PRUEBA = [
-    # 1. FIXED BIAS (3 valores de R_D)
-    {'nombre': 'Fixed Bias 1', 'tipo': 'fixed', 'V_GG': 1.5, 'R_D': 1000},
-    {'nombre': 'Fixed Bias 2', 'tipo': 'fixed', 'V_GG': 1.5, 'R_D': 2200},
-    {'nombre': 'Fixed Bias 3', 'tipo': 'fixed', 'V_GG': 1.5, 'R_D': 3300},
+    {'nombre': 'Fixed Bias 1', 'tipo': 'fixed', 'V_GG': 0.24, 'R_D': 820},
+    {'nombre': 'Fixed Bias 2', 'tipo': 'fixed', 'V_GG': 0.24, 'R_D': 1200},
+    {'nombre': 'Fixed Bias 3', 'tipo': 'fixed', 'V_GG': 0.24, 'R_D': 1500},
 
-    # 2. SELF BIAS (3 pares de R_D y R_S)
-    {'nombre': 'Self Bias 1', 'tipo': 'self', 'R_D': 2200, 'R_S': 470},
-    {'nombre': 'Self Bias 2', 'tipo': 'self', 'R_D': 3300, 'R_S': 1000},
-    {'nombre': 'Self Bias 3', 'tipo': 'self', 'R_D': 4700, 'R_S': 2200},
+    {'nombre': 'Self Bias 1', 'tipo': 'self', 'R_D': 820, 'R_S': 56},
+    {'nombre': 'Self Bias 2', 'tipo': 'self', 'R_D': 1200, 'R_S': 56},
+    {'nombre': 'Self Bias 3', 'tipo': 'self', 'R_D': 1500, 'R_S': 56},
 
-    # 3. VOLTAGE DIVIDER (3 conjuntos ajustados a máx 500k)
     {'nombre': 'Divider Bias 1', 'tipo': 'divider',
-     'R_D': 2200, 'R_S': 1000, 'R_1': 220e3, 'R_2': 22e3},
+     'R_D': 1000, 'R_S': 220, 'R_1': 200e3, 'R_2': 10e3},
     {'nombre': 'Divider Bias 2', 'tipo': 'divider',
-     'R_D': 3300, 'R_S': 2200, 'R_1': 100e3, 'R_2': 10e3},
+     'R_D': 1200, 'R_S': 330, 'R_1': 110e3, 'R_2': 10e3},
     {'nombre': 'Divider Bias 3', 'tipo': 'divider',
-     'R_D': 4700, 'R_S': 3300, 'R_1': 330e3, 'R_2': 33e3},
+     'R_D': 1500, 'R_S': 470, 'R_1': 68e3, 'R_2': 10e3},
 ]
 
 
@@ -109,11 +106,9 @@ def obtener_datos(nombre_archivo, v_offset, v_ventana=None, col_t=0, col_va=1, c
 
 
 def filtrar_datos(x, y, li=None, ls=None):
-    # Handle both numpy arrays and pandas Series
     if isinstance(x, Series):
         mascara = Series([True] * len(x), index=y.index)
     else:
-        # For numpy arrays, create a boolean mask
         mascara = array([True] * len(x), dtype=bool)
 
     if li is not None:
@@ -179,14 +174,30 @@ def graficar_corriente(v_b, i, v_ds, i_d, i_d_std, nombre, v_gs):
         [None, i_d_std])
 
 
-def graficar_regresion(x, y, ec_fit, nombre):
+def graficar_regresion(x, y, ec_fit, nombre, v_gs_q=None, i_d_q=None):
+    list_x = list(x)
+    list_y = list(y)
+
+    labels = ["Datos extraídos (Estables)", f"Ajuste cuadrático: {ec_fit[0]}"]
+    markers = [4, 0.1]
+    fmts = ["o", "--"]
+    alphas = [0.4, 1.0]
+
+    if v_gs_q is not None and i_d_q is not None:
+        list_x.append([v_gs_q])
+        list_y.append([i_d_q])
+        labels.append(
+            f"Punto Q de Intersección (V_GSQ={v_gs_q:.4f}V, I_DQ={i_d_q*1000:.3f}mA)")
+        markers.append(10)
+        fmts.append("ro")
+        alphas.append(1.0)
+
     graficar_columnas(
-        x=x, y=y,
-        tit=f"Curva de Transferencia (I_D vs V_GS) - {nombre}",
+        x=list_x, y=list_y,
+        tit=f"Método Gráfico: Curva de Transferencia y Recta de Carga - {nombre}",
         nom_x="Voltaje V_GS (V)", nom_y="Corriente de Saturación I_D (A)",
-        label=["Datos extraídos (Estables)",
-               f"Ajuste no emergencial: {ec_fit[0]}"],
-        markersize=[4, 0.1, 0.1], fmt=["o", "--", "-"]
+        label=labels,
+        markersize=markers, fmt=fmts, alpha=alphas
     )
 
 
@@ -224,6 +235,7 @@ def regresion_no_emergencial(x, y, a, b, c, y_std=None, resolucion_regresion=100
 
     def tanh_model(x, a, b, c):
         return a * tanh(b * x) * (1 + c * x)
+
     if model == QUADRATIC_MODEL:
         modelo = quadratic
     elif model == TANH_MODEL:
@@ -244,6 +256,84 @@ def regresion_no_emergencial(x, y, a, b, c, y_std=None, resolucion_regresion=100
     return ([x_fit, modelo(x_fit, a_, b_, c_)], (a_, b_, c_), sqrt(diag(pcov)))
 
 
+def resolver_polarizacion_teorica(i_dss, v_p, c_offset, v_dd, config):
+    tipo = config['tipo']
+    r_d = config.get('R_D', 0)
+    r_s = config.get('R_S', 0)
+
+    v_g = 0.0
+    v_gs = 0.0
+    i_d = 0.0
+
+    if tipo == 'fixed':
+        v_gg = config.get('V_GG', 0)
+        v_g = -v_gg
+        v_gs = v_g
+        if v_gs < v_p:
+            i_d = c_offset
+        else:
+            i_d = i_dss * (1 - v_gs / v_p)**2 + c_offset
+
+    elif tipo in ['self', 'divider']:
+        if tipo == 'divider':
+            r_1 = config.get('R_1', 1)
+            r_2 = config.get('R_2', 1)
+            v_g = v_dd * (r_2 / (r_1 + r_2))
+        else:
+            v_g = 0.0
+
+        A_coef = i_dss / (v_p**2)
+        B_coef = (1.0 / r_s) - (2 * i_dss / v_p)
+        C_coef = i_dss + c_offset - (v_g / r_s)
+
+        discriminante = B_coef**2 - 4*A_coef*C_coef
+        if discriminante < 0:
+            return None
+
+        v_gs_1 = (-B_coef + sqrt(discriminante)) / (2*A_coef)
+        v_gs_2 = (-B_coef - sqrt(discriminante)) / (2*A_coef)
+
+        validos = [v for v in (v_gs_1, v_gs_2) if v_p <= v <= v_g + 0.5]
+
+        if not validos:
+            return None
+
+        v_gs = max(validos)
+        i_d = i_dss * (1 - v_gs / v_p)**2 + c_offset
+
+    v_s = i_d * r_s
+    v_d = v_dd - (i_d * r_d)
+    v_ds = v_d - v_s
+
+    return {
+        "V_GS": v_gs, "I_D": i_d, "V_DS": v_ds,
+        "V_D": v_d, "V_G": v_g, "V_S": v_s,
+        "I_S": i_d, "I_G": 0.0
+    }
+
+
+def disenar_resistencias_para_punto_q(v_dd, i_dq, v_gsq, v_dsq_target=7.5):
+    v_gg_fixed = -v_gsq
+    r_d_fixed = (v_dd - v_dsq_target) / i_dq
+
+    r_s_self = -v_gsq / i_dq
+    r_d_self = ((v_dd - v_dsq_target) / i_dq) - r_s_self
+
+    v_s_divider = 2.0
+    r_s_divider = v_s_divider / i_dq
+    v_g_divider = v_gsq + v_s_divider
+    r_d_divider = (v_dd - v_dsq_target - v_s_divider) / i_dq
+
+    r2_divider = 100e3
+    r1_divider = r2_divider * ((v_dd / v_g_divider) - 1)
+
+    return {
+        "fixed": {"V_GG": v_gg_fixed, "R_D": r_d_fixed},
+        "self": {"R_S": r_s_self, "R_D": r_d_self},
+        "divider": {"R_1": r1_divider, "R_2": r2_divider, "R_S": r_s_divider, "R_D": r_d_divider}
+    }
+
+
 def caracterizar_transistor(transistor_path, res=RESISTENCIA, v_offset=0.0, v_ventana=None, li=None, ls=None, zona_saturacion=0.2):
     nombre_transistor = transistor_path.name
     nombres = filtrar_extension(transistor_path)
@@ -257,27 +347,27 @@ def caracterizar_transistor(transistor_path, res=RESISTENCIA, v_offset=0.0, v_ve
         ruta_completa = str(transistor_path / nombre)
 
         t, v_a, v_b, _, _ = obtener_datos(ruta_completa, v_offset, v_ventana)
-        # graficar_voltajes(t, v_a, v_b, nombre_transistor, v_gs)
+        graficar_voltajes(t, v_a, v_b, nombre_transistor, v_gs)
+
         i = (v_a - v_b) / res
         filt_i, filt_v_b = filtrar_datos(i, v_b, li=li, ls=ls)
         v_ds, i_d, i_d_std = valores_representativos(filt_v_b, filt_i)
-        # graficar_corriente(filt_v_b, filt_i, v_ds, i_d, i_d_std, nombre_transistor, v_gs)
+        graficar_corriente(filt_v_b, filt_i, v_ds, i_d,
+                           i_d_std, nombre_transistor, v_gs)
 
         i_dss = filt_i[filt_v_b >=
                        filt_v_b.max() * (1 - zona_saturacion)].mean()
 
         a_ini = max(i_d)
         b_ini = 2.0
-        c_ini = 0.01
+        c_ini = 0.0
 
         (v_ds_fit_ne, i_d_fit_ne), _, _ = regresion_no_emergencial(
-            v_ds,
-            i_d,
-            a_ini, b_ini, c_ini,
-            y_std=i_d_std,
-            model=TANH_MODEL
+            v_ds, i_d, a_ini, b_ini, c_ini, y_std=i_d_std, model=TANH_MODEL
         )
-        # graficar_regresion([v_ds, v_ds_fit_ne], [i_d, i_d_fit_ne], nombre_transistor, v_gs)
+
+        graficar_regresion([v_ds, v_ds_fit_ne], [
+                           i_d, i_d_fit_ne], nombre_transistor, v_gs)
 
         v_gs_list.append(v_gs)
         i_dss_list.append(i_dss)
@@ -286,75 +376,10 @@ def caracterizar_transistor(transistor_path, res=RESISTENCIA, v_offset=0.0, v_ve
         i_d_curves.append(i_d_fit_ne)
 
     transistor_dict.update({nombre_transistor: {
-        "V_GS": v_gs_list,
-        "I_DSS": i_dss_list,
-        "Labels": label_list,
-        "V_DS_CURVES": v_ds_curves,
-        "I_D_CURVES": i_d_curves
+        "V_GS": v_gs_list, "I_DSS": i_dss_list, "Labels": label_list,
+        "V_DS_CURVES": v_ds_curves, "I_D_CURVES": i_d_curves
     }})
     return transistor_dict
-
-
-def resolver_polarizacion_teorica(i_dss, v_p, v_dd, config):
-    tipo = config['tipo']
-    r_d = config.get('R_D', 0)
-    r_s = config.get('R_S', 0)
-
-    v_g = 0.0
-    v_gs = 0.0
-    i_d = 0.0
-
-    if tipo == 'fixed':
-        # Polarización Fija
-        v_gg = config.get('V_GG', 0)
-        v_g = -v_gg  # Asumiendo que V_GG se conecta con el negativo al Gate
-        v_gs = v_g
-        # Si V_GS es más negativo que V_P, el transistor está en corte
-        if v_gs < v_p:
-            i_d = 0
-        else:
-            i_d = i_dss * (1 - v_gs / v_p)**2
-
-    elif tipo in ['self', 'divider']:
-        # Autopolarización o Divisor de Voltaje
-        if tipo == 'divider':
-            r_1 = config.get('R_1', 1)
-            r_2 = config.get('R_2', 1)
-            v_g = v_dd * (r_2 / (r_1 + r_2))
-        else:  # self
-            v_g = 0.0
-
-        # Reordenando malla y Shockley queda una ecuación cuadrática a*V_GS^2 + b*V_GS + c = 0
-        a = i_dss / (v_p**2)
-        b = (1.0 / r_s) - (2 * i_dss / v_p)
-        c = i_dss - (v_g / r_s)
-
-        discriminante = b**2 - 4*a*c
-        if discriminante < 0:
-            return None  # No hay solución real
-
-        # Raíces de la ecuación
-        v_gs_1 = (-b + sqrt(discriminante)) / (2*a)
-        v_gs_2 = (-b - sqrt(discriminante)) / (2*a)
-
-        # Físicamente V_GS debe estar entre V_P (corte) y el voltaje máximo de compuerta
-        validos = [v for v in (v_gs_1, v_gs_2) if v_p <= v <= v_g + 0.5]
-
-        if not validos:
-            return None
-
-        v_gs = max(validos)  # Tomar la raíz con sentido físico
-        i_d = i_dss * (1 - v_gs / v_p)**2
-
-    v_s = i_d * r_s
-    v_d = v_dd - (i_d * r_d)
-    v_ds = v_d - v_s
-
-    return {
-        "V_GS": v_gs, "I_D": i_d, "V_DS": v_ds,
-        "V_D": v_d, "V_G": v_g, "V_S": v_s,
-        "I_S": i_d, "I_G": 0.0
-    }
 
 
 if __name__ == "__main__":
@@ -363,6 +388,9 @@ if __name__ == "__main__":
         print("La carpeta './transistores' no existe.")
         exit()
 
+    os.makedirs(RUTA_RESULTADOS, exist_ok=True) if 'os' in globals(
+    ) else Path(RUTA_RESULTADOS).mkdir(exist_ok=True)
+
     for transistor_path in RUTA_TRANSISTORES.iterdir():
         nombre_transistor = transistor_path.name
         if not transistor_path.is_dir():
@@ -370,17 +398,14 @@ if __name__ == "__main__":
 
         transistor_dict = caracterizar_transistor(
             transistor_path, v_offset=V_OFFSET, v_ventana=V_VENTANA, li=LI_CORRIENTE, ls=LS_CORRIENTE, zona_saturacion=0.2)
+
         v_gs_list = transistor_dict[nombre_transistor]["V_GS"]
         i_dss_list = transistor_dict[nombre_transistor]["I_DSS"]
         label_list = transistor_dict[nombre_transistor]["Labels"]
         v_ds_curves = transistor_dict[nombre_transistor]["V_DS_CURVES"]
         i_d_curves = transistor_dict[nombre_transistor]["I_D_CURVES"]
 
-        graficar_familia_de_curvas(
-            v_ds_curves,
-            i_d_curves,
-            nombre_transistor
-        )
+        graficar_familia_de_curvas(v_ds_curves, i_d_curves, nombre_transistor)
 
         v_gs_arr = array(v_gs_list)
         i_dss_arr = array(i_dss_list)
@@ -396,23 +421,25 @@ if __name__ == "__main__":
         c_ini = 0.0
 
         (v_gs_fit, i_dss_fit), (a_ne, b_ne, c_ne), (a_std, b_std, c_std) = regresion_no_emergencial(
-            v_gs_filt,
-            i_dss_filt,
-            a_ini, b_ini, c_ini,
-            model=QUADRATIC_MODEL
-        )
+            v_gs_filt, i_dss_filt, a_ini, b_ini, c_ini, model=QUADRATIC_MODEL)
+
+        v_p = b_ne
+        i_dss = a_ne
+
+        v_gs_q = v_p / 2.0
+        i_d_q = i_dss / 4.0 + c_ne
+
+        v_gs_q_std = (b_std / 2.0) if b_std > 0 else 1e-6
+        i_d_q_std = (a_std / 4.0) if a_std > 0 else 1e-6
+
+        print(f"V_GS_Q: {v_gs_q:.6f} V, I_D_Q: {i_d_q:.6f} A")
+
         graficar_regresion(
             [v_gs_filt, v_gs_fit],
             [i_dss_filt, i_dss_fit],
             [f"I_D = {a_ne:.2e} * (1 - V_GS / {b_ne:.6f})^2 + {c_ne:.2e}"],
-            nombre_transistor
+            nombre_transistor, v_gs_q=v_gs_q, i_d_q=i_d_q
         )
-
-        i_d_q = a_ne / 4.0
-        v_gs_q = b_ne / 2.0
-
-        std_i_d_q = a_std / 4.0
-        std_v_gs_q = b_std / 2.0
 
         g_m = (-2 * a_ne / b_ne) * (1 - v_gs_q / b_ne)
         A_v = -g_m * RES_CARGA
@@ -433,21 +460,48 @@ if __name__ == "__main__":
             r_d_calculado = float('inf')
             lambda_val = 0.0
 
-        # === GUARDADO DEL REPORTE ===
+        V_DS_OPTIMO = V_DD_LAB / 2.0
+        diseno = disenar_resistencias_para_punto_q(
+            V_DD_LAB, i_d_q, v_gs_q, V_DS_OPTIMO)
+
         ruta_archivo_salida = RUTA_RESULTADOS / \
             f"resultados_{nombre_transistor}.txt"
         with open(ruta_archivo_salida, "w", encoding="utf-8") as f:
             f.write(f"=== REPORTE DEL TRANSISTOR: {nombre_transistor} ===\n\n")
-            f.write("--- PUNTO DE TRABAJO ÓPTIMO (PEQUEÑA SEÑAL) ---\n")
-            f.write(f"V_GSQ = {v_gs_q:.6f} V  ± {std_v_gs_q:.6f} V\n")
-            f.write(f"I_DQ  = {i_d_q:.6f} A  ± {std_i_d_q:.6f} A\n\n")
+            f.write(
+                f"--- PUNTO DE TRABAJO ESTÁTICO (MÉTODO GRÁFICO SELF-BIAS R_S=470) ---\n")
+            f.write(f"V_GSQ = {v_gs_q:.6f} V  ± {v_gs_q_std:.6f} V\n")
+            f.write(f"I_DQ  = {i_d_q:.6f} A  ± {i_d_q_std:.6f} A\n")
+            f.write(f"V_DSQ Objetivo de Diseño = {V_DS_OPTIMO:.4f} V\n\n")
+
+            f.write(
+                "--- DISEÑO OPTIMIZADO DE REDES DE POLARIZACIÓN (Para este Q) ---\n")
+            f.write(f">> 1. FIXED BIAS:\n")
+            f.write(
+                f"   Requiere Fuente V_GG = {diseno['fixed']['V_GG']:.4f} V\n")
+            f.write(
+                f"   Requiere Resistencia R_D = {diseno['fixed']['R_D']:.4f} Ohm\n")
+
+            f.write(f">> 2. SELF BIAS:\n")
+            f.write(
+                f"   Requiere Resistencia R_S = {diseno['self']['R_S']:.4f} Ohm\n")
+            f.write(
+                f"   Requiere Resistencia R_D = {diseno['self']['R_D']:.4f} Ohm\n")
+
+            f.write(f">> 3. VOLTAGE DIVIDER BIAS (V_S propuesto = 2.0 V):\n")
+            f.write(
+                f"   Requiere Resistencia R_1 = {diseno['divider']['R_1']/1000:.4f} kOhm\n")
+            f.write(
+                f"   Requiere Resistencia R_2 = {diseno['divider']['R_2']/1000:.4f} kOhm\n")
+            f.write(
+                f"   Requiere Resistencia R_S = {diseno['divider']['R_S']:.4f} Ohm\n")
+            f.write(
+                f"   Requiere Resistencia R_D = {diseno['divider']['R_D']:.4f} Ohm\n\n")
 
             f.write("--- AMPLIFICACIÓN TEÓRICA ---\n")
             f.write(f"Transconductancia (g_m): {g_m:.6f} S\n")
             f.write(f"Ganancia de Voltaje (A_v): {A_v:.6f} V/V\n\n")
 
-            # === NUEVO: ESCRITURA DE LA ADVERTENCIA ===
-            f.write("--- ANÁLISIS DE NO IDEALIDAD (MODULACIÓN DE CANAL) ---\n")
             if r_d_calculado != float('inf'):
                 f.write(
                     f"Resistencia de salida (r_d) calculada a V_GS={v_gs_arr[idx_vgs_max]:.6f}V: {r_d_calculado/1000:.6f} kOhm\n")
@@ -463,6 +517,7 @@ if __name__ == "__main__":
             else:
                 f.write(
                     "Las curvas presentan una planitud ideal (r_d tiende a infinito).\n")
+
         print(
             f"-> Archivo de datos guardado con éxito en: {ruta_archivo_salida}")
         print("="*50 + "\n")
@@ -473,10 +528,7 @@ if __name__ == "__main__":
 
         for config in CIRCUITOS_PRUEBA:
             resultados_q = resolver_polarizacion_teorica(
-                a_ne,
-                b_ne,
-                V_DD_LAB,
-                config)
+                a_ne, b_ne, c_ne, V_DD_LAB, config)
 
             texto_res = f"\n>> CONFIGURACIÓN: {config['nombre']}\n"
             if resultados_q is None:

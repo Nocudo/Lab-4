@@ -333,6 +333,8 @@ INPUT C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex\latex\caption\caption.sty
 INPUT C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex\latex\caption\caption.sty
 INPUT C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex\latex\caption\caption3.sty
 INPUT C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex\latex\caption\caption3.sty
+INPUT C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex\latex\multirow\multirow.sty
+INPUT C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex\latex\multirow\multirow.sty
 INPUT C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex\latex\biblatex\biblatex.sty
 INPUT C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex\latex\biblatex\biblatex.sty
 INPUT C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex\latex\kvoptions\kvoptions.sty
@@ -552,13 +554,6 @@ INPUT .\regresion_corriente.png
 INPUT .\regresion_corriente.png
 INPUT .\regresion_corriente.png
 INPUT .\regresion_corriente.png
-INPUT .\curva_transferencia.png
-INPUT .\curva_transferencia.png
-INPUT .\curva_transferencia.png
-INPUT .\curva_transferencia.png
-INPUT .\curva_transferencia.png
-INPUT .\curva_transferencia.png
-INPUT .\curva_transferencia.png
 INPUT .\familia_curvas.png
 INPUT .\familia_curvas.png
 INPUT .\familia_curvas.png
@@ -566,6 +561,13 @@ INPUT .\familia_curvas.png
 INPUT .\familia_curvas.png
 INPUT .\familia_curvas.png
 INPUT .\familia_curvas.png
+INPUT .\curva_transferencia.png
+INPUT .\curva_transferencia.png
+INPUT .\curva_transferencia.png
+INPUT .\curva_transferencia.png
+INPUT .\curva_transferencia.png
+INPUT .\curva_transferencia.png
+INPUT .\curva_transferencia.png
 INPUT C:\Users\rodri\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr8.tfm
 INPUT C:\Users\rodri\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi8.tfm
 INPUT C:\Users\rodri\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy8.tfm
