@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.5.29)  3 JUN 2026 00:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.5.29)  3 JUN 2026 00:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1059,7 +1059,7 @@ Package: xparse 2025-10-09 L3 Experimental document command parser
 )
 Package: blx-case-expl3 2025/07/10 v3.21 expl3 case changing code for biblatex
 ))
-** ATTENTION: Overriding command lockouts (line 29).
+** ATTENTION: Overriding command lockouts (line 30).
 (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryshapes.geometric.code.tex
 File: tikzlibraryshapes.geometric.code.tex 2025-08-29 v3.1.11a (3.1.11a)
  (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shapes\pgflibraryshapes.geometric.code.tex
@@ -1076,26 +1076,26 @@ File: tikzlibrarypatterns.code.tex 2025-08-29 v3.1.11a (3.1.11a)
  (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibrarypatterns.code.tex
 File: pgflibrarypatterns.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ))
-Package translations Info: No language package found. I am going to use `english' as default language. on input line 65.
+Package translations Info: No language package found. I am going to use `english' as default language. on input line 66.
 \@quotelevel=\count511
 \@quotereset=\count512
  (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for U/mathx/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for U/mathx/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
  (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count513
@@ -1119,9 +1119,9 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
  (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/translations/dicts\translations-basic-dictionary-english.trsl
 File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
 )
-Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 65.
-LaTeX Info: Command `\dddot' is already robust on input line 65.
-LaTeX Info: Command `\ddddot' is already robust on input line 65.
+Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 66.
+LaTeX Info: Command `\dddot' is already robust on input line 66.
+LaTeX Info: Command `\ddddot' is already robust on input line 66.
 
 Package pgfplots notification 'compat/show suggested version=true': document has been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
@@ -1140,27 +1140,27 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
  (main.bbl)
-Package biblatex Info: Reference section=0 on input line 65.
-Package biblatex Info: Reference segment=0 on input line 65.
+Package biblatex Info: Reference section=0 on input line 66.
+Package biblatex Info: Reference segment=0 on input line 66.
 
-** ATTENTION: \authorblockN is deprecated (line 87). Use \IEEEauthorblockN instead.
-** ATTENTION: \authorblockA is deprecated (line 87). Use \IEEEauthorblockA instead.
+** ATTENTION: \authorblockN is deprecated (line 88). Use \IEEEauthorblockN instead.
+** ATTENTION: \authorblockA is deprecated (line 88). Use \IEEEauthorblockA instead.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 87.
+(Font)              <7> on input line 88.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 87.
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 87.
+(Font)              <5> on input line 88.
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 88.
 (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-** ATTENTION: \authorblockN is deprecated (line 87). Use \IEEEauthorblockN instead.
-** ATTENTION: \authorblockA is deprecated (line 87). Use \IEEEauthorblockA instead.
+** ATTENTION: \authorblockN is deprecated (line 88). Use \IEEEauthorblockN instead.
+** ATTENTION: \authorblockA is deprecated (line 88). Use \IEEEauthorblockA instead.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 91.
+(Font)              <9> on input line 92.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 91.
+(Font)              <6> on input line 92.
 
-Underfull \hbox (badness 1888) in paragraph at lines 165--165
+Underfull \hbox (badness 1888) in paragraph at lines 166--166
  [][]\T1/ptm/m/n/9 Región de
  []
 
@@ -1174,43 +1174,43 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <voltaje.png, id=41, 722.7pt x 361.35pt>
 File: voltaje.png Graphic file (type png)
 <use voltaje.png>
-Package pdftex.def Info: voltaje.png  used on input line 609.
+Package pdftex.def Info: voltaje.png  used on input line 610.
 (pdftex.def)             Requested size: 252.0pt x 126.00021pt.
 <corriente.png, id=43, 722.7pt x 361.35pt>
 File: corriente.png Graphic file (type png)
 <use corriente.png>
-Package pdftex.def Info: corriente.png  used on input line 621.
+Package pdftex.def Info: corriente.png  used on input line 622.
 (pdftex.def)             Requested size: 252.0pt x 126.00021pt.
 <regresion_corriente.png, id=44, 722.7pt x 361.35pt>
 File: regresion_corriente.png Graphic file (type png)
 <use regresion_corriente.png>
-Package pdftex.def Info: regresion_corriente.png  used on input line 635.
+Package pdftex.def Info: regresion_corriente.png  used on input line 636.
 (pdftex.def)             Requested size: 252.0pt x 126.00021pt.
 <familia_curvas.png, id=45, 722.7pt x 361.35pt>
 File: familia_curvas.png Graphic file (type png)
 <use familia_curvas.png>
-Package pdftex.def Info: familia_curvas.png  used on input line 651.
+Package pdftex.def Info: familia_curvas.png  used on input line 652.
 (pdftex.def)             Requested size: 252.0pt x 126.00021pt.
 <curva_transferencia.png, id=46, 722.7pt x 361.35pt>
 File: curva_transferencia.png Graphic file (type png)
 <use curva_transferencia.png>
-Package pdftex.def Info: curva_transferencia.png  used on input line 665.
+Package pdftex.def Info: curva_transferencia.png  used on input line 666.
 (pdftex.def)             Requested size: 252.0pt x 126.00021pt.
 
-Underfull \hbox (badness 1616) in paragraph at lines 666--666
+Underfull \hbox (badness 1616) in paragraph at lines 667--667
 []\T1/ptm/m/n/10 Fig. 15: |Curva de trans-fer-en-cia ex-per-i-men-tal y mod-elo
  []
 
 [6 <./voltaje.png> <./corriente.png> <./regresion_corriente.png> <./familia_curvas.png>]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 775.
+(Font)              <8> on input line 776.
  [7 <./curva_transferencia.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 778--778
+Underfull \hbox (badness 10000) in paragraph at lines 779--779
  \T1/ptm/m/it/10 C. Eval-u-ación de Er-rores y Com-para-ción Teórico-
  []
 
 
-Underfull \hbox (badness 1472) in paragraph at lines 779--786
+Underfull \hbox (badness 1472) in paragraph at lines 780--787
 []\T1/ptm/m/n/10 Con el propósito de val-i-dar la ex-ac-ti-tud del mod-elo
  []
 
@@ -1218,12 +1218,12 @@ Underfull \hbox (badness 1472) in paragraph at lines 779--786
 Underfull \vbox (badness 1371) has occurred while \output is active []
 
 
-Underfull \hbox (badness 1430) in paragraph at lines 960--961
+Underfull \hbox (badness 1430) in paragraph at lines 961--962
 \T1/ptm/m/n/10 un sis-tema de adquisi-ción de datos basado en el
  []
 
 [9]
-Underfull \hbox (badness 2050) in paragraph at lines 966--967
+Underfull \hbox (badness 2050) in paragraph at lines 967--968
 []\T1/ptm/b/n/10 Estabilización del Punto $\OML/cmm/m/it/10 Q$ \T1/ptm/b/n/10 Me-di-ante Retroal-i-
  []
 
